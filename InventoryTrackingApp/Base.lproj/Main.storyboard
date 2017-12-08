@@ -1,11 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tnZ-v7-s8C">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="WNz-gG-dJ4">
+            <objects>
+                <viewController id="tnZ-v7-s8C" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GaA-k4-MwE"/>
+                        <viewControllerLayoutGuide type="bottom" id="FuU-Oq-LDW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="puj-Ul-xPC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="vJu-FD-fEK">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2o-vB-R1e" customClass="TPKeyboardAvoidingScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LBE-8G-9CF">
+                                        <rect key="frame" x="37.5" y="399.5" width="300" height="108"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GEJ-LH-g32">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="68"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27P-ny-3MR" customClass="loginTextFields" customModule="InventoryTrackingApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="kullaniciAdi"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tdn-GD-pyR" customClass="loginTextFields" customModule="InventoryTrackingApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="38" width="300" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Sifre"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="XrT-mf-dC8"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNq-vl-Lvr" customClass="roundedButton" customModule="InventoryTrackingApp" customModuleProvider="target">
+                                                <rect key="frame" x="75" y="78" width="150" height="30"/>
+                                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="EBa-g3-jht"/>
+                                                </constraints>
+                                                <state key="normal" title="Giriş">
+                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="dUp-Sa-evC"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LBE-8G-9CF" firstAttribute="centerX" secondItem="B2o-vB-R1e" secondAttribute="centerX" id="9lF-yw-QUz"/>
+                                    <constraint firstItem="LBE-8G-9CF" firstAttribute="centerY" secondItem="B2o-vB-R1e" secondAttribute="centerY" constant="120" id="ItP-Aw-QXx"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B2o-vB-R1e" firstAttribute="height" secondItem="puj-Ul-xPC" secondAttribute="height" id="KaF-Qd-TOZ"/>
+                            <constraint firstItem="vJu-FD-fEK" firstAttribute="top" secondItem="GaA-k4-MwE" secondAttribute="bottom" id="OPb-Iv-u0C"/>
+                            <constraint firstItem="FuU-Oq-LDW" firstAttribute="top" secondItem="vJu-FD-fEK" secondAttribute="bottom" id="SjZ-Te-bdu"/>
+                            <constraint firstItem="vJu-FD-fEK" firstAttribute="leading" secondItem="puj-Ul-xPC" secondAttribute="leading" id="Upd-Yh-koQ"/>
+                            <constraint firstItem="B2o-vB-R1e" firstAttribute="centerY" secondItem="puj-Ul-xPC" secondAttribute="centerY" id="d49-LH-feJ"/>
+                            <constraint firstItem="B2o-vB-R1e" firstAttribute="width" secondItem="puj-Ul-xPC" secondAttribute="width" id="na8-wV-pVV"/>
+                            <constraint firstItem="B2o-vB-R1e" firstAttribute="centerX" secondItem="puj-Ul-xPC" secondAttribute="centerX" id="opP-hB-JOU"/>
+                            <constraint firstAttribute="trailing" secondItem="vJu-FD-fEK" secondAttribute="trailing" id="raX-2T-reQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8w-TQ-wVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="146"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="5760" height="3840"/>
+        <image name="Sifre" width="100" height="100"/>
+        <image name="kullaniciAdi" width="100" height="100"/>
+    </resources>
 </document>

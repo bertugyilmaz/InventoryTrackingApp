@@ -1,0 +1,733 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02C5FA60639025E0BC603A98BB33AA0C /* TPKeyboardAvoiding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 729053D3B54B81402AC12EA7BDA7D90B /* TPKeyboardAvoiding-dummy.m */; };
+		13EFBECDCCBE61748477839DA3BDBF97 /* TPKeyboardAvoiding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF8162B14477CA4E80F0408DCD72542 /* TPKeyboardAvoiding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A608F620EE5760A2C9F880C36E59B93 /* TPKeyboardAvoidingCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DA452346951E7AFE04D3FA6DEEF215D /* TPKeyboardAvoidingCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EA2432B418CBECB9F04D577B0D23116 /* Pods-InventoryTrackingAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E9AEEFD0B6D42CFFCCEB88EF5670CD /* Pods-InventoryTrackingAppTests-dummy.m */; };
+		3ECF7029E8D2C6B5D5D480521C8C07DA /* TPKeyboardAvoidingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE9516AC63E7D13D8D499B74E6477A7 /* TPKeyboardAvoidingScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B47388097A13223A9EC9C820C7F16DF /* Pods-InventoryTrackingAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2762529F4CD56F2D5F95967D54575921 /* Pods-InventoryTrackingAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C0DD8F8377CB5E63A7A120E89F91927 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6814AF620C1DA0B641B91F9FDCF7680C /* TPKeyboardAvoidingScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		61E2529308FE73839163E0D35458D827 /* Pods-InventoryTrackingApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9953923D16BA4897AFC24451FCF6A71B /* Pods-InventoryTrackingApp-dummy.m */; };
+		627BBD4B7C802FB9A8F16469CD648DEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		899817DB54D4E9474F29C7AA98C4A4B6 /* TPKeyboardAvoidingTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = FDA7540DAFBAEBD0F735F7BD3FE5CE4C /* TPKeyboardAvoidingTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9871E07E1779DF23F33CF8E90BF87BFB /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A405D45DEFE0A3D269C6622186C957E3 /* TPKeyboardAvoidingCollectionView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AEFBF07543C3ADF9A5614698CD2019C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C5872135F5146D76B820B3B5BFE059C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		CB32FE99DC60385C2D75C49BC8AF7808 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD299429537EB2ADD7B2CEC541716456 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D3096F48251BC51389ABB14DEA6DD8AB /* Pods-InventoryTrackingApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A3E0210DECA1EFFEE18AE195FC27B2D /* Pods-InventoryTrackingApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D53B876A1008B39CDC623239EA2653FC /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 410310049D2E0760ECAD696C01BC6641 /* TPKeyboardAvoidingTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F30740A236B7EB32088889AC7AF1C80A /* UIScrollView+TPKeyboardAvoidingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585CE018D429CC0B8BCEC6FD085541B /* UIScrollView+TPKeyboardAvoidingAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F2D7EC0F11B4C702CBBA19DBEAF3B4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EF9CA8E28734572420E5B213F57A1CF;
+			remoteInfo = TPKeyboardAvoiding;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01DABE8FF9B74F9CEA23BFBB97F0FE36 /* Pods-InventoryTrackingApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InventoryTrackingApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		0F9EB8E7F5FBB0408E74CB015E7B6C1B /* Pods-InventoryTrackingAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InventoryTrackingAppTests-resources.sh"; sourceTree = "<group>"; };
+		135A751496F20F46B9402B7767CE9F34 /* Pods-InventoryTrackingAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InventoryTrackingAppTests-frameworks.sh"; sourceTree = "<group>"; };
+		1A3E0210DECA1EFFEE18AE195FC27B2D /* Pods-InventoryTrackingApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InventoryTrackingApp-umbrella.h"; sourceTree = "<group>"; };
+		26F64C658EF538D4E40B0FB93B78D11A /* Pods-InventoryTrackingApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-InventoryTrackingApp.modulemap"; sourceTree = "<group>"; };
+		274781B65B86E4D407A405EF58F4F7C3 /* TPKeyboardAvoiding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPKeyboardAvoiding.xcconfig; sourceTree = "<group>"; };
+		2762529F4CD56F2D5F95967D54575921 /* Pods-InventoryTrackingAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InventoryTrackingAppTests-umbrella.h"; sourceTree = "<group>"; };
+		340FB0E762CE89A847B39A8C26CED5FB /* Pods-InventoryTrackingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InventoryTrackingApp.debug.xcconfig"; sourceTree = "<group>"; };
+		410310049D2E0760ECAD696C01BC6641 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		53F15A1CDDEE1EEDE8B92C3015EC12C5 /* Pods-InventoryTrackingApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InventoryTrackingApp-resources.sh"; sourceTree = "<group>"; };
+		5BF8162B14477CA4E80F0408DCD72542 /* TPKeyboardAvoiding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPKeyboardAvoiding-umbrella.h"; sourceTree = "<group>"; };
+		5FDC501DFC57FB90470644FB65687EE4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E9AEEFD0B6D42CFFCCEB88EF5670CD /* Pods-InventoryTrackingAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InventoryTrackingAppTests-dummy.m"; sourceTree = "<group>"; };
+		6555F833C6889E6F77868B4E76FC0480 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6814AF620C1DA0B641B91F9FDCF7680C /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		714D44BE4A9219593C4DE5B4B246CA9F /* Pods-InventoryTrackingAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InventoryTrackingAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		729053D3B54B81402AC12EA7BDA7D90B /* TPKeyboardAvoiding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPKeyboardAvoiding-dummy.m"; sourceTree = "<group>"; };
+		7585CE018D429CC0B8BCEC6FD085541B /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TPKeyboardAvoidingAdditions.h"; path = "TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		7F5F1CA7AEA90D66889671B32F2E0257 /* Pods_InventoryTrackingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_InventoryTrackingApp.framework; path = "Pods-InventoryTrackingApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		871874239A69A177FEDE8EB5CADA606C /* Pods-InventoryTrackingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InventoryTrackingApp.release.xcconfig"; sourceTree = "<group>"; };
+		8C569DF879965AA86242C9E5011B9DC9 /* Pods-InventoryTrackingAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InventoryTrackingAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8DA452346951E7AFE04D3FA6DEEF215D /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingCollectionView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		9153A44FC16A6EA7C6E79D1363C9E2FB /* Pods-InventoryTrackingApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InventoryTrackingApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		922EA71BD1E22CA68447D7B9D1EF5CCC /* Pods_InventoryTrackingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_InventoryTrackingAppTests.framework; path = "Pods-InventoryTrackingAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9953923D16BA4897AFC24451FCF6A71B /* Pods-InventoryTrackingApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InventoryTrackingApp-dummy.m"; sourceTree = "<group>"; };
+		9D4CC353E8D368DD15F76D3B4DD942A2 /* Pods-InventoryTrackingApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InventoryTrackingApp-frameworks.sh"; sourceTree = "<group>"; };
+		A0039589E95EADAD315627EF3ECD5442 /* Pods-InventoryTrackingAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-InventoryTrackingAppTests.modulemap"; sourceTree = "<group>"; };
+		A405D45DEFE0A3D269C6622186C957E3 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingCollectionView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		BE4923DFBB1EAD8F812BC6A2749E46B2 /* TPKeyboardAvoiding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPKeyboardAvoiding-prefix.pch"; sourceTree = "<group>"; };
+		DBE9516AC63E7D13D8D499B74E6477A7 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		EC854B28C79DF3D5EECEDAC10B4F7958 /* Pods-InventoryTrackingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InventoryTrackingAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F2B701CF67F7D02B10B759845B1E1A69 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6C0094FCC4BDAFCAFBB535141DA043D /* TPKeyboardAvoiding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TPKeyboardAvoiding.framework; path = TPKeyboardAvoiding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95E7DDE5C71F911F223DD00FD9FA52C /* TPKeyboardAvoiding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TPKeyboardAvoiding.modulemap; sourceTree = "<group>"; };
+		FC74458728A35AEFC3A69CE66CE9AA18 /* Pods-InventoryTrackingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InventoryTrackingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD299429537EB2ADD7B2CEC541716456 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		FDA7540DAFBAEBD0F735F7BD3FE5CE4C /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingTableView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72C8252047FC02D82324A3BA61846968 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5872135F5146D76B820B3B5BFE059C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6E8BEFDC74A851ACF5683664C025847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEFBF07543C3ADF9A5614698CD2019C3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6D2BCF1479A8C949537A096A48B57F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				627BBD4B7C802FB9A8F16469CD648DEF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26B02AB5A3C4CA59476EC03FD556F377 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2BF02B87387107CD7013346F91E0889 /* TPKeyboardAvoiding */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2BCB87325FF02EF0896F3CEE40EDB4B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F1CA7AEA90D66889671B32F2E0257 /* Pods_InventoryTrackingApp.framework */,
+				922EA71BD1E22CA68447D7B9D1EF5CCC /* Pods_InventoryTrackingAppTests.framework */,
+				F6C0094FCC4BDAFCAFBB535141DA043D /* TPKeyboardAvoiding.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5516C6D25988DFCBEE506A02F0FCC816 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6555F833C6889E6F77868B4E76FC0480 /* Info.plist */,
+				F95E7DDE5C71F911F223DD00FD9FA52C /* TPKeyboardAvoiding.modulemap */,
+				274781B65B86E4D407A405EF58F4F7C3 /* TPKeyboardAvoiding.xcconfig */,
+				729053D3B54B81402AC12EA7BDA7D90B /* TPKeyboardAvoiding-dummy.m */,
+				BE4923DFBB1EAD8F812BC6A2749E46B2 /* TPKeyboardAvoiding-prefix.pch */,
+				5BF8162B14477CA4E80F0408DCD72542 /* TPKeyboardAvoiding-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TPKeyboardAvoiding";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				26B02AB5A3C4CA59476EC03FD556F377 /* Pods */,
+				2BCB87325FF02EF0896F3CEE40EDB4B2 /* Products */,
+				DA221B114575009B9E57DCB5544B94A3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2BF02B87387107CD7013346F91E0889 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				8DA452346951E7AFE04D3FA6DEEF215D /* TPKeyboardAvoidingCollectionView.h */,
+				A405D45DEFE0A3D269C6622186C957E3 /* TPKeyboardAvoidingCollectionView.m */,
+				DBE9516AC63E7D13D8D499B74E6477A7 /* TPKeyboardAvoidingScrollView.h */,
+				6814AF620C1DA0B641B91F9FDCF7680C /* TPKeyboardAvoidingScrollView.m */,
+				FDA7540DAFBAEBD0F735F7BD3FE5CE4C /* TPKeyboardAvoidingTableView.h */,
+				410310049D2E0760ECAD696C01BC6641 /* TPKeyboardAvoidingTableView.m */,
+				7585CE018D429CC0B8BCEC6FD085541B /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				FD299429537EB2ADD7B2CEC541716456 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				5516C6D25988DFCBEE506A02F0FCC816 /* Support Files */,
+			);
+			name = TPKeyboardAvoiding;
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		CC1C8F8E6530968FE455AD79F1ECE431 /* Pods-InventoryTrackingApp */ = {
+			isa = PBXGroup;
+			children = (
+				F2B701CF67F7D02B10B759845B1E1A69 /* Info.plist */,
+				26F64C658EF538D4E40B0FB93B78D11A /* Pods-InventoryTrackingApp.modulemap */,
+				9153A44FC16A6EA7C6E79D1363C9E2FB /* Pods-InventoryTrackingApp-acknowledgements.markdown */,
+				01DABE8FF9B74F9CEA23BFBB97F0FE36 /* Pods-InventoryTrackingApp-acknowledgements.plist */,
+				9953923D16BA4897AFC24451FCF6A71B /* Pods-InventoryTrackingApp-dummy.m */,
+				9D4CC353E8D368DD15F76D3B4DD942A2 /* Pods-InventoryTrackingApp-frameworks.sh */,
+				53F15A1CDDEE1EEDE8B92C3015EC12C5 /* Pods-InventoryTrackingApp-resources.sh */,
+				1A3E0210DECA1EFFEE18AE195FC27B2D /* Pods-InventoryTrackingApp-umbrella.h */,
+				340FB0E762CE89A847B39A8C26CED5FB /* Pods-InventoryTrackingApp.debug.xcconfig */,
+				871874239A69A177FEDE8EB5CADA606C /* Pods-InventoryTrackingApp.release.xcconfig */,
+			);
+			name = "Pods-InventoryTrackingApp";
+			path = "Target Support Files/Pods-InventoryTrackingApp";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DA221B114575009B9E57DCB5544B94A3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CC1C8F8E6530968FE455AD79F1ECE431 /* Pods-InventoryTrackingApp */,
+				E972830B1A764AC8E67E08F0E7ADEB1F /* Pods-InventoryTrackingAppTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E972830B1A764AC8E67E08F0E7ADEB1F /* Pods-InventoryTrackingAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FDC501DFC57FB90470644FB65687EE4 /* Info.plist */,
+				A0039589E95EADAD315627EF3ECD5442 /* Pods-InventoryTrackingAppTests.modulemap */,
+				714D44BE4A9219593C4DE5B4B246CA9F /* Pods-InventoryTrackingAppTests-acknowledgements.markdown */,
+				8C569DF879965AA86242C9E5011B9DC9 /* Pods-InventoryTrackingAppTests-acknowledgements.plist */,
+				63E9AEEFD0B6D42CFFCCEB88EF5670CD /* Pods-InventoryTrackingAppTests-dummy.m */,
+				135A751496F20F46B9402B7767CE9F34 /* Pods-InventoryTrackingAppTests-frameworks.sh */,
+				0F9EB8E7F5FBB0408E74CB015E7B6C1B /* Pods-InventoryTrackingAppTests-resources.sh */,
+				2762529F4CD56F2D5F95967D54575921 /* Pods-InventoryTrackingAppTests-umbrella.h */,
+				FC74458728A35AEFC3A69CE66CE9AA18 /* Pods-InventoryTrackingAppTests.debug.xcconfig */,
+				EC854B28C79DF3D5EECEDAC10B4F7958 /* Pods-InventoryTrackingAppTests.release.xcconfig */,
+			);
+			name = "Pods-InventoryTrackingAppTests";
+			path = "Target Support Files/Pods-InventoryTrackingAppTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		46FCECB49FA2B506F48F850FD185D490 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13EFBECDCCBE61748477839DA3BDBF97 /* TPKeyboardAvoiding-umbrella.h in Headers */,
+				3A608F620EE5760A2C9F880C36E59B93 /* TPKeyboardAvoidingCollectionView.h in Headers */,
+				3ECF7029E8D2C6B5D5D480521C8C07DA /* TPKeyboardAvoidingScrollView.h in Headers */,
+				899817DB54D4E9474F29C7AA98C4A4B6 /* TPKeyboardAvoidingTableView.h in Headers */,
+				F30740A236B7EB32088889AC7AF1C80A /* UIScrollView+TPKeyboardAvoidingAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A0ECB12EDB878A32CDBCA290B0071B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B47388097A13223A9EC9C820C7F16DF /* Pods-InventoryTrackingAppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D94D15F4DC095BBA780C831C206BE72F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3096F48251BC51389ABB14DEA6DD8AB /* Pods-InventoryTrackingApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0EF9CA8E28734572420E5B213F57A1CF /* TPKeyboardAvoiding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8520CCB6E8DA80ABEBA79EE587E0BBF5 /* Build configuration list for PBXNativeTarget "TPKeyboardAvoiding" */;
+			buildPhases = (
+				E0110548AD5C31641E191E0CF205AC81 /* Sources */,
+				A6E8BEFDC74A851ACF5683664C025847 /* Frameworks */,
+				46FCECB49FA2B506F48F850FD185D490 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TPKeyboardAvoiding;
+			productName = TPKeyboardAvoiding;
+			productReference = F6C0094FCC4BDAFCAFBB535141DA043D /* TPKeyboardAvoiding.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8247B2F00A1E52F7A52D735FEC0ACCCB /* Pods-InventoryTrackingAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15706FC0D50A958374556E0B248FCDEE /* Build configuration list for PBXNativeTarget "Pods-InventoryTrackingAppTests" */;
+			buildPhases = (
+				039E7F3277F2C6F760A80CFD069CDBDC /* Sources */,
+				E6D2BCF1479A8C949537A096A48B57F8 /* Frameworks */,
+				B5A0ECB12EDB878A32CDBCA290B0071B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-InventoryTrackingAppTests";
+			productName = "Pods-InventoryTrackingAppTests";
+			productReference = 922EA71BD1E22CA68447D7B9D1EF5CCC /* Pods_InventoryTrackingAppTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C5DD5C5715D44780A2822A42FB7BB5BC /* Pods-InventoryTrackingApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03D82C5D1FA99AFA9CF5F8BCB4ED41A3 /* Build configuration list for PBXNativeTarget "Pods-InventoryTrackingApp" */;
+			buildPhases = (
+				117ED01D85CDB727C62F6C8A64D40E34 /* Sources */,
+				72C8252047FC02D82324A3BA61846968 /* Frameworks */,
+				D94D15F4DC095BBA780C831C206BE72F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC1A64E468D1252E1292CFA4BE91DFD1 /* PBXTargetDependency */,
+			);
+			name = "Pods-InventoryTrackingApp";
+			productName = "Pods-InventoryTrackingApp";
+			productReference = 7F5F1CA7AEA90D66889671B32F2E0257 /* Pods_InventoryTrackingApp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2BCB87325FF02EF0896F3CEE40EDB4B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5DD5C5715D44780A2822A42FB7BB5BC /* Pods-InventoryTrackingApp */,
+				8247B2F00A1E52F7A52D735FEC0ACCCB /* Pods-InventoryTrackingAppTests */,
+				0EF9CA8E28734572420E5B213F57A1CF /* TPKeyboardAvoiding */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		039E7F3277F2C6F760A80CFD069CDBDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EA2432B418CBECB9F04D577B0D23116 /* Pods-InventoryTrackingAppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		117ED01D85CDB727C62F6C8A64D40E34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61E2529308FE73839163E0D35458D827 /* Pods-InventoryTrackingApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0110548AD5C31641E191E0CF205AC81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02C5FA60639025E0BC603A98BB33AA0C /* TPKeyboardAvoiding-dummy.m in Sources */,
+				9871E07E1779DF23F33CF8E90BF87BFB /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				4C0DD8F8377CB5E63A7A120E89F91927 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				D53B876A1008B39CDC623239EA2653FC /* TPKeyboardAvoidingTableView.m in Sources */,
+				CB32FE99DC60385C2D75C49BC8AF7808 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC1A64E468D1252E1292CFA4BE91DFD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TPKeyboardAvoiding;
+			target = 0EF9CA8E28734572420E5B213F57A1CF /* TPKeyboardAvoiding */;
+			targetProxy = 0F2D7EC0F11B4C702CBBA19DBEAF3B4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		457561423E13013492BB2DE5C4D77CC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 274781B65B86E4D407A405EF58F4F7C3 /* TPKeyboardAvoiding.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPKeyboardAvoiding/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.modulemap";
+				PRODUCT_NAME = TPKeyboardAvoiding;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		621AB785940626574F07364CB14760E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		7912FE15F275D95A4CA1E771E494F437 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC74458728A35AEFC3A69CE66CE9AA18 /* Pods-InventoryTrackingAppTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-InventoryTrackingAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-InventoryTrackingAppTests/Pods-InventoryTrackingAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_InventoryTrackingAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8E8CFC3DBF396042160A5195513FE7AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 340FB0E762CE89A847B39A8C26CED5FB /* Pods-InventoryTrackingApp.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-InventoryTrackingApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-InventoryTrackingApp/Pods-InventoryTrackingApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_InventoryTrackingApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B57C09D404C607DDE283C5C44183B2A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BF2D63B920D8DE0279C7DD2E4990CDF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC854B28C79DF3D5EECEDAC10B4F7958 /* Pods-InventoryTrackingAppTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-InventoryTrackingAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-InventoryTrackingAppTests/Pods-InventoryTrackingAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_InventoryTrackingAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E56B39155FADE67AABD96E75706B3A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 274781B65B86E4D407A405EF58F4F7C3 /* TPKeyboardAvoiding.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPKeyboardAvoiding/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.modulemap";
+				PRODUCT_NAME = TPKeyboardAvoiding;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F9BEB628D464821093B3D54510A3FA0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 871874239A69A177FEDE8EB5CADA606C /* Pods-InventoryTrackingApp.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-InventoryTrackingApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-InventoryTrackingApp/Pods-InventoryTrackingApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_InventoryTrackingApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03D82C5D1FA99AFA9CF5F8BCB4ED41A3 /* Build configuration list for PBXNativeTarget "Pods-InventoryTrackingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E8CFC3DBF396042160A5195513FE7AC /* Debug */,
+				F9BEB628D464821093B3D54510A3FA0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15706FC0D50A958374556E0B248FCDEE /* Build configuration list for PBXNativeTarget "Pods-InventoryTrackingAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7912FE15F275D95A4CA1E771E494F437 /* Debug */,
+				BF2D63B920D8DE0279C7DD2E4990CDF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B57C09D404C607DDE283C5C44183B2A1 /* Debug */,
+				621AB785940626574F07364CB14760E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8520CCB6E8DA80ABEBA79EE587E0BBF5 /* Build configuration list for PBXNativeTarget "TPKeyboardAvoiding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E56B39155FADE67AABD96E75706B3A08 /* Debug */,
+				457561423E13013492BB2DE5C4D77CC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -5,5 +5,11 @@
 //  Created by onur hüseyin çantay on 8.12.2017.
 //  Copyright © 2017 Bertuğ YILMAZ. All rights reserved.
 //
+import UIKit
 
-import Foundation
+class Colors {
+    static let MIDNIGHT_BLUE = UIColor(displayP3Red: 44/255, green: 62/255, blue: 80/255, alpha: 100)
+    static let NAVBAR_TABBAR_COLOR = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 60)
+    static let ROOM_ORANGE = UIColor(displayP3Red: 230/255, green: 126/255, blue: 34/255, alpha: 100)
+    static let BUTTON_BLUE = UIColor(displayP3Red: 106/255, green: 175/255, blue: 230/255, alpha: 100)
+}
