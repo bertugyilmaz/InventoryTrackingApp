@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0117E3AB1FDB36DE00825E6B /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117E3AA1FDB36DE00825E6B /* BaseVC.swift */; };
 		013360971FDB183F008A19BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013360961FDB183F008A19BD /* AppDelegate.swift */; };
 		0133609C1FDB183F008A19BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133609A1FDB183F008A19BD /* Main.storyboard */; };
 		0133609E1FDB183F008A19BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0133609D1FDB183F008A19BD /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0117E3AA1FDB36DE00825E6B /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		013360931FDB183F008A19BD /* InventoryTrackingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryTrackingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013360961FDB183F008A19BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0133609B1FDB183F008A19BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0117E3A91FDB36B500825E6B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0117E3AA1FDB36DE00825E6B /* BaseVC.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		0133608A1FDB183F008A19BD = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		611324F61FDB1EEB00B61FC1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0117E3A91FDB36B500825E6B /* Main */,
 				611324F21FDB1E9400B61FC1 /* LoginVC.swift */,
 			);
 			path = Controller;
@@ -228,7 +239,7 @@
 				TargetAttributes = {
 					013360921FDB183F008A19BD = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = B4F2B776R3;
+						DevelopmentTeam = 37V52RJ6S5;
 						ProvisioningStyle = Automatic;
 					};
 					013360A61FDB183F008A19BD = {
@@ -389,6 +400,7 @@
 				611324F31FDB1E9400B61FC1 /* LoginVC.swift in Sources */,
 				611324FC1FDB1F3400B61FC1 /* loginTextFields.swift in Sources */,
 				013360971FDB183F008A19BD /* AppDelegate.swift in Sources */,
+				0117E3AB1FDB36DE00825E6B /* BaseVC.swift in Sources */,
 				611324FA1FDB1F1600B61FC1 /* roundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,10 +541,10 @@
 			baseConfigurationReference = 3E402BA513F7A4B7E2B08001 /* Pods-InventoryTrackingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B4F2B776R3;
+				DEVELOPMENT_TEAM = 37V52RJ6S5;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -543,10 +555,10 @@
 			baseConfigurationReference = 52C9270982229EA1E992E65F /* Pods-InventoryTrackingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B4F2B776R3;
+				DEVELOPMENT_TEAM = 37V52RJ6S5;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
