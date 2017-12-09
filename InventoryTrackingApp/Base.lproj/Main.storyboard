@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tnZ-v7-s8C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R0e-Rd-QuM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,15 +97,155 @@
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <segue destination="R0e-Rd-QuM" kind="show" id="l0P-2K-f1U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8w-TQ-wVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="145.27736131934034"/>
+            <point key="canvasLocation" x="1199" y="-639"/>
+        </scene>
+        <!--Personeller-->
+        <scene sceneID="69r-fy-h2B">
+            <objects>
+                <viewController title="Personeller" id="397-dC-eVi" customClass="PersonelVC" customModule="InventoryTrackingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BWM-rd-7OY"/>
+                        <viewControllerLayoutGuide type="bottom" id="eee-lT-7gC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FF4-GK-Lsc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Qel-Ik-q1o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PBw-3A-ctg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="174" y="982"/>
+        </scene>
+        <!--Odalar-->
+        <scene sceneID="yiH-iW-nta">
+            <objects>
+                <viewController title="Odalar" id="Mvb-Zi-nTO" customClass="MainVC" customModule="InventoryTrackingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qjt-Yd-GiM"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZOK-Vi-Vqd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pbN-p7-FRd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNc-pF-kqK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odalar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-6U-CxS">
+                                        <rect key="frame" x="151.5" y="28.5" width="72.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gh-uh-Yt7">
+                                        <rect key="frame" x="8" y="28" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idJ-c8-piL">
+                                        <rect key="frame" x="9" y="21" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="MRa-Zl-O67"/>
+                                            <constraint firstAttribute="width" constant="45" id="yHX-u6-Orf"/>
+                                        </constraints>
+                                        <state key="normal" image="exit-icon"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="idJ-c8-piL" firstAttribute="top" secondItem="CNc-pF-kqK" secondAttribute="top" constant="21" id="2M3-bS-1oz"/>
+                                    <constraint firstAttribute="bottom" secondItem="idJ-c8-piL" secondAttribute="bottom" constant="21" id="6B2-98-hbH"/>
+                                    <constraint firstAttribute="height" constant="87" id="Ehc-B3-KJa"/>
+                                    <constraint firstItem="K8q-6U-CxS" firstAttribute="centerY" secondItem="CNc-pF-kqK" secondAttribute="centerY" id="RFq-aQ-WHT"/>
+                                    <constraint firstItem="idJ-c8-piL" firstAttribute="leading" secondItem="CNc-pF-kqK" secondAttribute="leading" constant="9" id="dTh-Vb-dkO"/>
+                                    <constraint firstItem="K8q-6U-CxS" firstAttribute="centerX" secondItem="CNc-pF-kqK" secondAttribute="centerX" id="uBo-Gc-EaG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CNc-pF-kqK" firstAttribute="leading" secondItem="pbN-p7-FRd" secondAttribute="leading" id="2EH-Aa-CMb"/>
+                            <constraint firstAttribute="trailing" secondItem="CNc-pF-kqK" secondAttribute="trailing" id="845-v1-Ktj"/>
+                            <constraint firstItem="CNc-pF-kqK" firstAttribute="top" secondItem="pbN-p7-FRd" secondAttribute="top" id="ZzZ-tH-hq2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="TCe-lF-zwj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tet-3u-gYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173.5999999999999" y="973.76311844077964"/>
+        </scene>
+        <!--Demirbaş Alımı-->
+        <scene sceneID="bZg-Jw-0uZ">
+            <objects>
+                <viewController title="Demirbaş Alımı" id="OSN-29-8kx" customClass="AddItemVC" customModule="InventoryTrackingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uny-kk-iHp"/>
+                        <viewControllerLayoutGuide type="bottom" id="CCV-M7-q6w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CTN-dl-r97">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="phT-yJ-Tjh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVZ-jf-aik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2084" y="974"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UCd-V1-qBZ">
+            <objects>
+                <tabBarController id="R0e-Rd-QuM" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ds5-Gp-ZZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Mvb-Zi-nTO" kind="relationship" relationship="viewControllers" id="3xi-wS-nNi"/>
+                        <segue destination="397-dC-eVi" kind="relationship" relationship="viewControllers" id="8PN-6S-wY9"/>
+                        <segue destination="OSN-29-8kx" kind="relationship" relationship="viewControllers" id="c2a-SE-G8C"/>
+                        <segue destination="a5V-2l-k64" kind="relationship" relationship="viewControllers" id="gk3-nF-ybz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lgb-TZ-EEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="125"/>
+        </scene>
+        <!--Demirbaş Ataması-->
+        <scene sceneID="1QM-s7-AqV">
+            <objects>
+                <viewController title="Demirbaş Ataması" id="a5V-2l-k64" customClass="SetItemVC" customModule="InventoryTrackingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wHe-ZV-aN8"/>
+                        <viewControllerLayoutGuide type="bottom" id="jz5-sk-hVs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z7V-g4-OlO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Pn3-aH-pEG"/>
+                    <navigationItem key="navigationItem" id="sYZ-82-Pu4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7OQ-7o-SuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2942" y="974"/>
         </scene>
     </scenes>
     <resources>
         <image name="Background" width="5760" height="3840"/>
         <image name="Sifre" width="100" height="100"/>
+        <image name="exit-icon" width="20" height="21"/>
         <image name="kullaniciAdi" width="100" height="100"/>
     </resources>
 </document>
