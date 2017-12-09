@@ -10,22 +10,31 @@ import UIKit
 
 class BaseVC: UIViewController{
 
+    var navItem: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden = false
+        self.navItem = self.navigationController?.visibleViewController?.navigationItem
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      self.tabBarController?.tabBar.backgroundColor = Colors.NAVBAR_TABBAR_COLOR
-        self.tabBarController?.tabBar.tintColor =  UIColor.white
-       self.navigationController?.navigationBar.backgroundColor = Colors.NAVBAR_TABBAR_COLOR
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        self.setNavbarAtributes()
+//      self.tabBarController?.tabBar.backgroundColor = Colors.NAVBAR_TABBAR_COLOR
+//        self.tabBarController?.tabBar.tintColor =  UIColor.white
+//       self.navigationController?.navigationBar.backgroundColor = Colors.NAVBAR_TABBAR_COLOR
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+//        self.setTabbarAtributes()
         
+        self.setLeftBarButton()
     }
-    func setNavbarAtributes()  {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
+    func setTabbarAtributes()  {
         self.tabBarController?.tabBar.items![0].title = "Odalar"
         let odaImage = UIImage(named: "home.png")
         self.tabBarController?.tabBar.items![0].image =  odaImage?.scaleImage(width: 30, height: 30, scaleMode: .AspectFill, trim: false)
@@ -39,8 +48,18 @@ class BaseVC: UIViewController{
         let demirbasSatımImage = UIImage(named: "arrow.png")
         self.tabBarController?.tabBar.items![3].image = demirbasSatımImage?.scaleImage(width: 30, height: 30, scaleMode: .AspectFill, trim: false)
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
+    
+    func setLeftBarButton(){
+        let logoutButton = UIButton(type: .custom)
+        logoutButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
+        logoutButton.setImage(UIImage(named: "exit-icon"), for: .normal)
+        logoutButton.addTarget(self, action: #selector(logoutButtonAction), for: .touchUpInside)
+        
+        navItem?.setLeftBarButton(UIBarButtonItem(customView: logoutButton), animated: false)
+    }
+    
+    func logoutButtonAction(){
+           print("Selam ben logout edicem seni")
     }
 
 

@@ -12,12 +12,33 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var navController: UINavigationController!
+    var navbarAppearance = UINavigationBar.appearance()
+    var tabbarAppearance = UITabBar.appearance()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         UIApplication.shared.statusBarStyle = .lightContent
+        navbarAppearance.tintColor = UIColor.white
+        navbarAppearance.barStyle = .blackOpaque
+        navbarAppearance.barTintColor = Colors.NAVBAR_TABBAR_COLOR
+    
+        tabbarAppearance.tintColor = Colors.NAVBAR_ITEM_SELECTED
+        tabbarAppearance.barTintColor = Colors.NAVBAR_TABBAR_COLOR
+        tabbarAppearance.unselectedItemTintColor = Colors.NAVBAR_ITEM_UNSELECTED
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+        
+        navController = UINavigationController(rootViewController: vc)
+        let frame = UIScreen.main.bounds
+        window = UIWindow(frame: frame)
+        
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

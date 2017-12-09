@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R0e-Rd-QuM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R0e-Rd-QuM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--LoginVC-->
         <scene sceneID="WNz-gG-dJ4">
             <objects>
-                <viewController id="tnZ-v7-s8C" customClass="LoginVC" customModule="InventoryTrackingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tnZ-v7-s8C" customClass="LoginVC" customModule="InventoryTrackingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GaA-k4-MwE"/>
                         <viewControllerLayoutGuide type="bottom" id="FuU-Oq-LDW"/>
@@ -98,6 +98,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="loginButton" destination="aNq-vl-Lvr" id="uBa-4i-ZkU"/>
                         <segue destination="R0e-Rd-QuM" kind="show" id="l0P-2K-f1U"/>
                     </connections>
                 </viewController>
@@ -118,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Qel-Ik-q1o"/>
+                    <tabBarItem key="tabBarItem" title="Personeller" image="employer-icon" id="Qel-Ik-q1o"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBw-3A-ctg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,48 +136,9 @@
                     <view key="view" contentMode="scaleToFill" id="pbN-p7-FRd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNc-pF-kqK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odalar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-6U-CxS">
-                                        <rect key="frame" x="151.5" y="28.5" width="72.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gh-uh-Yt7">
-                                        <rect key="frame" x="8" y="28" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idJ-c8-piL">
-                                        <rect key="frame" x="9" y="21" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="MRa-Zl-O67"/>
-                                            <constraint firstAttribute="width" constant="45" id="yHX-u6-Orf"/>
-                                        </constraints>
-                                        <state key="normal" image="exit-icon"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="idJ-c8-piL" firstAttribute="top" secondItem="CNc-pF-kqK" secondAttribute="top" constant="21" id="2M3-bS-1oz"/>
-                                    <constraint firstAttribute="bottom" secondItem="idJ-c8-piL" secondAttribute="bottom" constant="21" id="6B2-98-hbH"/>
-                                    <constraint firstAttribute="height" constant="87" id="Ehc-B3-KJa"/>
-                                    <constraint firstItem="K8q-6U-CxS" firstAttribute="centerY" secondItem="CNc-pF-kqK" secondAttribute="centerY" id="RFq-aQ-WHT"/>
-                                    <constraint firstItem="idJ-c8-piL" firstAttribute="leading" secondItem="CNc-pF-kqK" secondAttribute="leading" constant="9" id="dTh-Vb-dkO"/>
-                                    <constraint firstItem="K8q-6U-CxS" firstAttribute="centerX" secondItem="CNc-pF-kqK" secondAttribute="centerX" id="uBo-Gc-EaG"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="CNc-pF-kqK" firstAttribute="leading" secondItem="pbN-p7-FRd" secondAttribute="leading" id="2EH-Aa-CMb"/>
-                            <constraint firstAttribute="trailing" secondItem="CNc-pF-kqK" secondAttribute="trailing" id="845-v1-Ktj"/>
-                            <constraint firstItem="CNc-pF-kqK" firstAttribute="top" secondItem="pbN-p7-FRd" secondAttribute="top" id="ZzZ-tH-hq2"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="TCe-lF-zwj"/>
+                    <tabBarItem key="tabBarItem" title="Odalar" image="home-icon" id="TCe-lF-zwj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tet-3u-gYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="phT-yJ-Tjh"/>
+                    <tabBarItem key="tabBarItem" title="Demirbaş Alımı" image="dolar-icon" id="phT-yJ-Tjh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVZ-jf-aik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,8 +166,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="UCd-V1-qBZ">
             <objects>
-                <tabBarController id="R0e-Rd-QuM" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ds5-Gp-ZZ2">
+                <tabBarController storyboardIdentifier="MainTabbarVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R0e-Rd-QuM" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="ds5-Gp-ZZ2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -234,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Pn3-aH-pEG"/>
+                    <tabBarItem key="tabBarItem" title="Demirbaş Ataması" image="arrow-icon" id="Pn3-aH-pEG"/>
                     <navigationItem key="navigationItem" id="sYZ-82-Pu4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OQ-7o-SuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,7 +207,10 @@
     <resources>
         <image name="Background" width="5760" height="3840"/>
         <image name="Sifre" width="100" height="100"/>
-        <image name="exit-icon" width="20" height="21"/>
+        <image name="arrow-icon" width="11" height="15"/>
+        <image name="dolar-icon" width="13" height="21"/>
+        <image name="employer-icon" width="22" height="21"/>
+        <image name="home-icon" width="25" height="21"/>
         <image name="kullaniciAdi" width="100" height="100"/>
     </resources>
 </document>

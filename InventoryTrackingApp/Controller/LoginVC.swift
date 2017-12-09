@@ -11,10 +11,18 @@ import UIKit
 class LoginVC : BaseVC {
     @IBOutlet weak var userName : UITextField!
     
+    @IBOutlet weak var loginButton: roundedButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.isNavigationBarHidden = true
+        
+        loginButton.addTarget(self, action: #selector(loginButtonAction(sender:)), for: .touchUpInside)
     }
-
+    
+    func loginButtonAction(sender: roundedButton){
+        let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTabbarVC")
+        self.navigationController?.pushViewController(mainVC!, animated: true)
+    }
 }
 
