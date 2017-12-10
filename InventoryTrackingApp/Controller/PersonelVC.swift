@@ -10,30 +10,52 @@ import UIKit
 
 class PersonelVC: BaseVC {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    var alertView: UIAlertController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        createAlertView()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("PersonelVC")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func createAlertView(){
+        self.alertView = UIAlertController(title: "Oda Seçimi", message: "Atamak istediğiniz odayı yazınız.", preferredStyle: .alert)
+        alertView.addTextField { (getRoomTextFields) in
+            getRoomTextFields.placeholder = "Oda seçiniz"
+        }
+        alertView.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
+        
+        let okButtonAction = UIAlertAction(title: "Seç", style: .default) { (alertAction) in
+            let textField = self.alertView.textFields?[0] as! UITextField
+            print(textField.text)
+        }
+        
+        alertView.addAction(okButtonAction)
+    }
+}
+extension PersonelVC: UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PersonelTableViewCell
+        
+        return cell
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.present(alertView, animated: true, completion: nil)
+    }
 }
+
+
