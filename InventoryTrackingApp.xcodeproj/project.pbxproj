@@ -14,6 +14,7 @@
 		013360A11FDB183F008A19BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133609F1FDB183F008A19BD /* LaunchScreen.storyboard */; };
 		013360AC1FDB183F008A19BD /* InventoryTrackingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */; };
 		019BD8661FDD737B0068E223 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 019BD8651FDD737B0068E223 /* GoogleService-Info.plist */; };
+		019BD8681FDD7BA80068E223 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BD8671FDD7BA80068E223 /* DataService.swift */; };
 		01AF03C41FDCB37500B64C41 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */; };
 		01AF03C81FDCBA7300B64C41 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF03C71FDCBA7300B64C41 /* RoundedView.swift */; };
 		01AF03CA1FDCC48600B64C41 /* PersonelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF03C91FDCC48600B64C41 /* PersonelTableViewCell.swift */; };
@@ -54,6 +55,7 @@
 		013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTrackingAppTests.swift; sourceTree = "<group>"; };
 		013360AD1FDB183F008A19BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		019BD8651FDD737B0068E223 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		019BD8671FDD7BA80068E223 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		01AF03C71FDCBA7300B64C41 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		01AF03C91FDCC48600B64C41 /* PersonelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonelTableViewCell.swift; sourceTree = "<group>"; };
@@ -107,8 +109,8 @@
 		0133608A1FDB183F008A19BD = {
 			isa = PBXGroup;
 			children = (
-				013360941FDB183F008A19BD /* Products */,
 				013360951FDB183F008A19BD /* InventoryTrackingApp */,
+				013360941FDB183F008A19BD /* Products */,
 				013360AA1FDB183F008A19BD /* InventoryTrackingAppTests */,
 				A215276798EEF95B3E29EC8F /* Pods */,
 				61627A35E343B775E15B24B6 /* Frameworks */,
@@ -205,6 +207,7 @@
 			children = (
 				611324FE1FDB1FA000B61FC1 /* Constants.swift */,
 				611325001FDB1FD700B61FC1 /* Extensions.swift */,
+				019BD8671FDD7BA80068E223 /* DataService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				0117E3AB1FDB36DE00825E6B /* BaseVC.swift in Sources */,
 				61C688541FDD38D200F0E63D /* itemSetAddButton.swift in Sources */,
 				611324FA1FDB1F1600B61FC1 /* roundedButton.swift in Sources */,
+				019BD8681FDD7BA80068E223 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

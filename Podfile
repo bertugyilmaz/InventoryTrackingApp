@@ -6,6 +6,9 @@ target 'InventoryTrackingApp' do
   use_frameworks!
   pod 'TPKeyboardAvoiding', '~> 1.3'
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+
   # Pods for InventoryTrackingApp
 
   target 'InventoryTrackingAppTests' do
