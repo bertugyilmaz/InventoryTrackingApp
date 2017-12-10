@@ -11,8 +11,8 @@ import UIKit
 class RoomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var roomIdLabel: UILabel!
-    @IBOutlet weak var roomTypeLabel: UILabel!
-    @IBOutlet weak var itemCountLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     
 }

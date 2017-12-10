@@ -53,14 +53,26 @@ class BaseVC: UIViewController{
         let logoutButton = UIButton(type: .custom)
         logoutButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
         logoutButton.setImage(UIImage(named: "exit-icon"), for: .normal)
-        logoutButton.addTarget(self, action: #selector(logoutButtonAction), for: .touchUpInside)
+        logoutButton.addTarget(self, action: #selector(logoutButtonAction(sender:)), for: .touchUpInside)
         
-        navItem?.setLeftBarButton(UIBarButtonItem(customView: logoutButton), animated: false)
+        let backButton = UIButton(type: .custom)
+        backButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
+        backButton.setImage(UIImage(named: "back-button"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonAction(sender:)), for: .touchUpInside)
+        
+        if self.restorationIdentifier == "RoomDetailVC"{
+            navItem?.setLeftBarButton(UIBarButtonItem(customView: backButton), animated: false)
+        }else {
+            navItem?.setLeftBarButton(UIBarButtonItem(customView: logoutButton), animated: false)
+        }
     }
     
-    func logoutButtonAction(){
+    func logoutButtonAction(sender: UIButton){
            print("Selam ben logout edicem seni")
     }
-
+    
+    func backButtonAction(sender: UIButton){
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }

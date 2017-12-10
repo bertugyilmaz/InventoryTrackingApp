@@ -16,9 +16,8 @@ class MainVC: BaseVC {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-
-        // Do any additional setup after loading the view.
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("MainVC")
@@ -38,7 +37,9 @@ extension MainVC: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "RoomDetailVC") as! RoomDetailVC
         
+        self.navigationController?.pushViewController(destinationVC, animated: true)
     }
 }
 
