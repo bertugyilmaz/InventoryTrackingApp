@@ -13,6 +13,7 @@
 		0133609E1FDB183F008A19BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0133609D1FDB183F008A19BD /* Assets.xcassets */; };
 		013360A11FDB183F008A19BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133609F1FDB183F008A19BD /* LaunchScreen.storyboard */; };
 		013360AC1FDB183F008A19BD /* InventoryTrackingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */; };
+		019BD8661FDD737B0068E223 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 019BD8651FDD737B0068E223 /* GoogleService-Info.plist */; };
 		01AF03C41FDCB37500B64C41 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */; };
 		01AF03C81FDCBA7300B64C41 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF03C71FDCBA7300B64C41 /* RoundedView.swift */; };
 		01AF03CA1FDCC48600B64C41 /* PersonelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF03C91FDCC48600B64C41 /* PersonelTableViewCell.swift */; };
@@ -52,6 +53,7 @@
 		013360A71FDB183F008A19BD /* InventoryTrackingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventoryTrackingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTrackingAppTests.swift; sourceTree = "<group>"; };
 		013360AD1FDB183F008A19BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		019BD8651FDD737B0068E223 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		01AF03C71FDCBA7300B64C41 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		01AF03C91FDCC48600B64C41 /* PersonelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonelTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,7 +135,7 @@
 				0133609A1FDB183F008A19BD /* Main.storyboard */,
 				0133609D1FDB183F008A19BD /* Assets.xcassets */,
 				0133609F1FDB183F008A19BD /* LaunchScreen.storyboard */,
-				013360A21FDB183F008A19BD /* Info.plist */,
+				019BD8641FDD735E0068E223 /* Supporting Files */,
 			);
 			path = InventoryTrackingApp;
 			sourceTree = "<group>";
@@ -145,6 +147,15 @@
 				013360AD1FDB183F008A19BD /* Info.plist */,
 			);
 			path = InventoryTrackingAppTests;
+			sourceTree = "<group>";
+		};
+		019BD8641FDD735E0068E223 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				013360A21FDB183F008A19BD /* Info.plist */,
+				019BD8651FDD737B0068E223 /* GoogleService-Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		01AF03C21FDCB33F00B64C41 /* Cells */ = {
@@ -309,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				013360A11FDB183F008A19BD /* LaunchScreen.storyboard in Resources */,
+				019BD8661FDD737B0068E223 /* GoogleService-Info.plist in Resources */,
 				0133609E1FDB183F008A19BD /* Assets.xcassets in Resources */,
 				0133609C1FDB183F008A19BD /* Main.storyboard in Resources */,
 			);
@@ -369,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A7532046E610858BD4388256 /* [CP] Copy Pods Resources */ = {
@@ -420,7 +432,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
