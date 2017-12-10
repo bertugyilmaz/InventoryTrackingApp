@@ -26,7 +26,10 @@ class BaseVC: UIViewController{
 //        self.navigationController?.navigationBar.tintColor = UIColor.white
 //        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
 //        self.setTabbarAtributes()
-        
+        if(self.title != "Demirbaş Alımı"){
+            self.navItem.rightBarButtonItem = nil
+        }
+        self.navItem.title = self.title
         self.setLeftBarButton()
     }
     

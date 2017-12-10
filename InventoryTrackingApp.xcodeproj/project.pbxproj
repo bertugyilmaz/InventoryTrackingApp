@@ -28,6 +28,7 @@
 		61A59A9B1FDB3CEA0002E55B /* PersonelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A9A1FDB3CEA0002E55B /* PersonelVC.swift */; };
 		61A59A9D1FDB3D100002E55B /* AddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A9C1FDB3D100002E55B /* AddItemVC.swift */; };
 		61A59A9F1FDB3D220002E55B /* SetItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A9E1FDB3D220002E55B /* SetItemVC.swift */; };
+		61C688541FDD38D200F0E63D /* itemSetAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C688531FDD38D200F0E63D /* itemSetAddButton.swift */; };
 		AA431F9463458647C6B515B8 /* Pods_InventoryTrackingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1BF0F527290EF193F04796C /* Pods_InventoryTrackingAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		61A59A9A1FDB3CEA0002E55B /* PersonelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonelVC.swift; sourceTree = "<group>"; };
 		61A59A9C1FDB3D100002E55B /* AddItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemVC.swift; sourceTree = "<group>"; };
 		61A59A9E1FDB3D220002E55B /* SetItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetItemVC.swift; sourceTree = "<group>"; };
+		61C688531FDD38D200F0E63D /* itemSetAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemSetAddButton.swift; sourceTree = "<group>"; };
 		8C604FC23B9D0A82ADE22E6B /* Pods_InventoryTrackingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryTrackingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		966A351E7AB63D90FC828251 /* Pods-InventoryTrackingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryTrackingAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryTrackingAppTests/Pods-InventoryTrackingAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C1BF0F527290EF193F04796C /* Pods_InventoryTrackingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryTrackingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 				611324FB1FDB1F3400B61FC1 /* loginTextFields.swift */,
 				01AF03C71FDCBA7300B64C41 /* RoundedView.swift */,
 				01AF03CB1FDCD39100B64C41 /* CustomAlertView.swift */,
+				61C688531FDD38D200F0E63D /* itemSetAddButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,7 +277,7 @@
 				TargetAttributes = {
 					013360921FDB183F008A19BD = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 37V52RJ6S5;
+						DevelopmentTeam = B4F2B776R3;
 						ProvisioningStyle = Automatic;
 					};
 					013360A61FDB183F008A19BD = {
@@ -444,6 +447,7 @@
 				013360971FDB183F008A19BD /* AppDelegate.swift in Sources */,
 				61A59A971FDB3C9D0002E55B /* MainVC.swift in Sources */,
 				0117E3AB1FDB36DE00825E6B /* BaseVC.swift in Sources */,
+				61C688541FDD38D200F0E63D /* itemSetAddButton.swift in Sources */,
 				01AF03CC1FDCD39100B64C41 /* CustomAlertView.swift in Sources */,
 				611324FA1FDB1F1600B61FC1 /* roundedButton.swift in Sources */,
 			);
@@ -585,10 +589,10 @@
 			baseConfigurationReference = 3E402BA513F7A4B7E2B08001 /* Pods-InventoryTrackingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37V52RJ6S5;
+				DEVELOPMENT_TEAM = B4F2B776R3;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1InventoryTrackingApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -599,10 +603,10 @@
 			baseConfigurationReference = 52C9270982229EA1E992E65F /* Pods-InventoryTrackingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37V52RJ6S5;
+				DEVELOPMENT_TEAM = B4F2B776R3;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1InventoryTrackingApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
