@@ -19,7 +19,7 @@ class PersonelVC: BaseVC {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        createAlertView()
+        self.createAlertView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +33,9 @@ class PersonelVC: BaseVC {
             getRoomTextFields.placeholder = "Oda seçiniz"
         }
         alertView.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
+//        pickerView oluştulucak, Firebase den çekilen odalar set edilecek
+//        let textField = self.alertView.textFields?[0] as! UITextField
+//        textField.inputView = UIPickerView()
         
         let okButtonAction = UIAlertAction(title: "Seç", style: .default) { (alertAction) in
             let textField = self.alertView.textFields?[0] as! UITextField
