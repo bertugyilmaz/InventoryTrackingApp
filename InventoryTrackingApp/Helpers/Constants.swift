@@ -15,5 +15,5 @@ class Colors {
     static let NAVBAR_ITEM_UNSELECTED = UIColor(hexString: "#E9E9E9")
     static let ROOM_ORANGE = UIColor(displayP3Red: 230/255, green: 126/255, blue: 34/255, alpha: 100)
     static let BUTTON_BLUE = UIColor(displayP3Red: 106/255, green: 175/255, blue: 230/255, alpha: 100)
-
+    static let TABLEVIEW_SEPERATOR = UIColor(hexString: "#ECF0F1")
 }

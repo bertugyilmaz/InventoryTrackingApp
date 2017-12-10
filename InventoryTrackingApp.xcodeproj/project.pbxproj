@@ -13,6 +13,7 @@
 		0133609E1FDB183F008A19BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0133609D1FDB183F008A19BD /* Assets.xcassets */; };
 		013360A11FDB183F008A19BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133609F1FDB183F008A19BD /* LaunchScreen.storyboard */; };
 		013360AC1FDB183F008A19BD /* InventoryTrackingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */; };
+		01AF03C41FDCB37500B64C41 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */; };
 		46334746715BFF3241675C48 /* Pods_InventoryTrackingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C604FC23B9D0A82ADE22E6B /* Pods_InventoryTrackingApp.framework */; };
 		611324F31FDB1E9400B61FC1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611324F21FDB1E9400B61FC1 /* LoginVC.swift */; };
 		611324FA1FDB1F1600B61FC1 /* roundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611324F91FDB1F1600B61FC1 /* roundedButton.swift */; };
@@ -48,6 +49,7 @@
 		013360A71FDB183F008A19BD /* InventoryTrackingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventoryTrackingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTrackingAppTests.swift; sourceTree = "<group>"; };
 		013360AD1FDB183F008A19BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		11888E8F8145A670F9A976F2 /* Pods-InventoryTrackingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryTrackingAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryTrackingAppTests/Pods-InventoryTrackingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E402BA513F7A4B7E2B08001 /* Pods-InventoryTrackingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryTrackingApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryTrackingApp/Pods-InventoryTrackingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		52C9270982229EA1E992E65F /* Pods-InventoryTrackingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryTrackingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryTrackingApp/Pods-InventoryTrackingApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,14 @@
 			path = InventoryTrackingAppTests;
 			sourceTree = "<group>";
 		};
+		01AF03C21FDCB33F00B64C41 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		611324F61FDB1EEB00B61FC1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 		611324F71FDB1EF400B61FC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				01AF03C21FDCB33F00B64C41 /* Cells */,
 				611324F91FDB1F1600B61FC1 /* roundedButton.swift */,
 				611324FB1FDB1F3400B61FC1 /* loginTextFields.swift */,
 			);
@@ -418,6 +429,7 @@
 				611324F31FDB1E9400B61FC1 /* LoginVC.swift in Sources */,
 				61A59A9D1FDB3D100002E55B /* AddItemVC.swift in Sources */,
 				611324FC1FDB1F3400B61FC1 /* loginTextFields.swift in Sources */,
+				01AF03C41FDCB37500B64C41 /* RoomTableViewCell.swift in Sources */,
 				013360971FDB183F008A19BD /* AppDelegate.swift in Sources */,
 				61A59A971FDB3C9D0002E55B /* MainVC.swift in Sources */,
 				0117E3AB1FDB36DE00825E6B /* BaseVC.swift in Sources */,
