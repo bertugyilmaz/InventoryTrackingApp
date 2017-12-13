@@ -21,6 +21,7 @@ class MainVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.Rooms.removeAll()
         self.getRooms { (success) in
             guard success == true else{
                 return
@@ -68,8 +69,10 @@ extension MainVC: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RoomTableViewCell
-        cell.room = Rooms[indexPath.row]
-        cell.countLabel.text = Rooms[indexPath.row].itemCount
+        if(!Rooms.isEmpty){
+            cell.room = Rooms[indexPath.row]
+            cell.countLabel.text = Rooms[indexPath.row].itemCount
+        }
         return cell
     }
     
@@ -78,7 +81,7 @@ extension MainVC: UITableViewDelegate,UITableViewDataSource{
         destinationVC.room = self.Rooms[indexPath.row]
         destinationVC.AuthenticatedUserKey = self.personKey[indexPath.row]
         self.navigationController?.pushViewController(destinationVC, animated: true)
-        self.Rooms.removeAll()
+        
     }
     
 }
