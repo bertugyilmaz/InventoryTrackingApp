@@ -24,11 +24,16 @@
 		611324FC1FDB1F3400B61FC1 /* loginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611324FB1FDB1F3400B61FC1 /* loginTextFields.swift */; };
 		611324FF1FDB1FA000B61FC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611324FE1FDB1FA000B61FC1 /* Constants.swift */; };
 		611325011FDB1FD700B61FC1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611325001FDB1FD700B61FC1 /* Extensions.swift */; };
+		61349AF01FDDBC130082B939 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61349AED1FDDBC130082B939 /* Item.swift */; };
+		61349AF11FDDBC130082B939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61349AEE1FDDBC130082B939 /* User.swift */; };
+		61349AF21FDDBC130082B939 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61349AEF1FDDBC130082B939 /* Room.swift */; };
+		61349AF41FDDBD370082B939 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61349AF31FDDBD370082B939 /* Types.swift */; };
 		61A59A971FDB3C9D0002E55B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A961FDB3C9D0002E55B /* MainVC.swift */; };
 		61A59A991FDB3CCF0002E55B /* RoomDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A981FDB3CCF0002E55B /* RoomDetailVC.swift */; };
 		61A59A9B1FDB3CEA0002E55B /* PersonelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A9A1FDB3CEA0002E55B /* PersonelVC.swift */; };
 		61A59A9D1FDB3D100002E55B /* AddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A9C1FDB3D100002E55B /* AddItemVC.swift */; };
 		61A59A9F1FDB3D220002E55B /* SetItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A9E1FDB3D220002E55B /* SetItemVC.swift */; };
+		61ACE62B1FDFE0B70038024C /* RoomDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ACE62A1FDFE0B70038024C /* RoomDetailCell.swift */; };
 		61C688541FDD38D200F0E63D /* itemSetAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C688531FDD38D200F0E63D /* itemSetAddButton.swift */; };
 		AA431F9463458647C6B515B8 /* Pods_InventoryTrackingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1BF0F527290EF193F04796C /* Pods_InventoryTrackingAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,11 +72,16 @@
 		611324FB1FDB1F3400B61FC1 /* loginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTextFields.swift; sourceTree = "<group>"; };
 		611324FE1FDB1FA000B61FC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		611325001FDB1FD700B61FC1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		61349AED1FDDBC130082B939 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		61349AEE1FDDBC130082B939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		61349AEF1FDDBC130082B939 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		61349AF31FDDBD370082B939 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		61A59A961FDB3C9D0002E55B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		61A59A981FDB3CCF0002E55B /* RoomDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailVC.swift; sourceTree = "<group>"; };
 		61A59A9A1FDB3CEA0002E55B /* PersonelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonelVC.swift; sourceTree = "<group>"; };
 		61A59A9C1FDB3D100002E55B /* AddItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemVC.swift; sourceTree = "<group>"; };
 		61A59A9E1FDB3D220002E55B /* SetItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetItemVC.swift; sourceTree = "<group>"; };
+		61ACE62A1FDFE0B70038024C /* RoomDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailCell.swift; sourceTree = "<group>"; };
 		61C688531FDD38D200F0E63D /* itemSetAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemSetAddButton.swift; sourceTree = "<group>"; };
 		8C604FC23B9D0A82ADE22E6B /* Pods_InventoryTrackingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryTrackingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		966A351E7AB63D90FC828251 /* Pods-InventoryTrackingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryTrackingAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryTrackingAppTests/Pods-InventoryTrackingAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +175,7 @@
 			children = (
 				01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */,
 				01AF03C91FDCC48600B64C41 /* PersonelTableViewCell.swift */,
+				61ACE62A1FDFE0B70038024C /* RoomDetailCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -198,6 +209,9 @@
 		611324F81FDB1EFD00B61FC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				61349AED1FDDBC130082B939 /* Item.swift */,
+				61349AEF1FDDBC130082B939 /* Room.swift */,
+				61349AEE1FDDBC130082B939 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +222,7 @@
 				611324FE1FDB1FA000B61FC1 /* Constants.swift */,
 				611325001FDB1FD700B61FC1 /* Extensions.swift */,
 				019BD8671FDD7BA80068E223 /* DataService.swift */,
+				61349AF31FDDBD370082B939 /* Types.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -288,7 +303,7 @@
 				TargetAttributes = {
 					013360921FDB183F008A19BD = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 37V52RJ6S5;
+						DevelopmentTeam = B4F2B776R3;
 						ProvisioningStyle = Automatic;
 					};
 					013360A61FDB183F008A19BD = {
@@ -448,6 +463,7 @@
 				61A59A9B1FDB3CEA0002E55B /* PersonelVC.swift in Sources */,
 				61A59A991FDB3CCF0002E55B /* RoomDetailVC.swift in Sources */,
 				01AF03C81FDCBA7300B64C41 /* RoundedView.swift in Sources */,
+				61349AF41FDDBD370082B939 /* Types.swift in Sources */,
 				61A59A9F1FDB3D220002E55B /* SetItemVC.swift in Sources */,
 				611324FF1FDB1FA000B61FC1 /* Constants.swift in Sources */,
 				611325011FDB1FD700B61FC1 /* Extensions.swift in Sources */,
@@ -455,13 +471,17 @@
 				61A59A9D1FDB3D100002E55B /* AddItemVC.swift in Sources */,
 				611324FC1FDB1F3400B61FC1 /* loginTextFields.swift in Sources */,
 				01AF03C41FDCB37500B64C41 /* RoomTableViewCell.swift in Sources */,
+				61349AF01FDDBC130082B939 /* Item.swift in Sources */,
 				01AF03CA1FDCC48600B64C41 /* PersonelTableViewCell.swift in Sources */,
 				013360971FDB183F008A19BD /* AppDelegate.swift in Sources */,
 				61A59A971FDB3C9D0002E55B /* MainVC.swift in Sources */,
+				61349AF21FDDBC130082B939 /* Room.swift in Sources */,
 				0117E3AB1FDB36DE00825E6B /* BaseVC.swift in Sources */,
 				61C688541FDD38D200F0E63D /* itemSetAddButton.swift in Sources */,
 				611324FA1FDB1F1600B61FC1 /* roundedButton.swift in Sources */,
 				019BD8681FDD7BA80068E223 /* DataService.swift in Sources */,
+				61349AF11FDDBC130082B939 /* User.swift in Sources */,
+				61ACE62B1FDFE0B70038024C /* RoomDetailCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,10 +621,10 @@
 			baseConfigurationReference = 3E402BA513F7A4B7E2B08001 /* Pods-InventoryTrackingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37V52RJ6S5;
+				DEVELOPMENT_TEAM = B4F2B776R3;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.1InventoryTrackingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -615,10 +635,10 @@
 			baseConfigurationReference = 52C9270982229EA1E992E65F /* Pods-InventoryTrackingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37V52RJ6S5;
+				DEVELOPMENT_TEAM = B4F2B776R3;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.1InventoryTrackingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

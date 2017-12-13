@@ -14,6 +14,14 @@ class Item {
     private let Item_Name : String!
     private let Item_Price : String!
     private let Item_Type : String!
+    private let IsAvailable : Int!
+    var isAvailable : Bool {
+        if IsAvailable == 0{
+            return false
+        }else{
+            return true
+        }
+    }
     var Id : String!{
         return Item_Id
     }
@@ -29,12 +37,13 @@ class Item {
     var type : String!{
         return Item_Type
     }
-    init(ItemId:String,ItemCount:String,ItemName:String,ItemPrice:String,ItemType:String) {
+    init(ItemId:String,ItemCount:String,ItemName:String,ItemPrice:String,ItemType:String,isavailable:Int) {
         self.Item_Id = ItemId
         self.Item_Count = ItemCount
         self.Item_Name = ItemName
         self.Item_Price = ItemPrice
         self.Item_Type = ItemType
+        self.IsAvailable = isavailable
     }
     
 }

@@ -11,19 +11,37 @@ import Foundation
 class Room {
     private let room_Id : String!
     private let room_Type : String!
-    private let Items : [Item]!
+    private let ItemKeys : [String]?
+    private let ItemCounts : String!
+    private var user : User?
+    var AuthenticatedPerson :User!{
+        get{
+            if(user ==
+                nil){
+                return User(userId: "-1", userName: "Kullanıcı Atanmadı")
+            }
+            return user
+        }set{
+            return self.user = newValue
+        }
+    }
+    
+    var itemCount : String!{
+        return ItemCounts
+    }
     var Id : String!{
         return room_Id
     }
     var roomType :String!{
         return room_Type
     }
-    var items : [Item]!{
-        return Items
+    var itemsKeys : [String]!{
+        return ItemKeys
     }
-    init(roomId:String,roomType:String!,items:[Item]) {
+    init(roomId:String,roomType:String!,itemKeys:[String],itemCount : String) {
         self.room_Id = roomId
         self.room_Type = roomType
-        self.Items = items
+        self.ItemKeys = itemKeys
+        self.ItemCounts = itemCount
     }
 }

@@ -11,6 +11,13 @@ enum UIImageAlignment {
     case Center, Left, Top, Right, Bottom, TopLeft, BottomRight, BottomLeft, TopRight
 }
 
+extension String {
+    func isEqualToString(find: String) -> Bool {
+        return String(format: self) == find
+    }
+}
+
+
 enum UIImageScaleMode {
     case Fill,
     AspectFill,
