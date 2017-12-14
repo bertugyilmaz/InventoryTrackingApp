@@ -13,6 +13,7 @@ class MainVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     var Rooms = [Room]()
     typealias getItemCompleted = () -> ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
@@ -47,7 +48,8 @@ class MainVC: BaseVC {
                                 for key in itemIds{
                                     itemKeys.append(key)
                                 }
-                                    self.Rooms.append(Room(roomId: roomId, roomType: roomtype, itemKeys: itemKeys,itemCount: roomItemCount))
+                                
+                                self.Rooms.append(Room(roomId: roomId, roomType: roomtype, itemKeys: itemKeys,itemCount: roomItemCount))
                                 self.tableView.reloadData()
                                 completion(true)
                             }
@@ -81,9 +83,7 @@ extension MainVC: UITableViewDelegate,UITableViewDataSource{
         destinationVC.room = self.Rooms[indexPath.row]
         destinationVC.AuthenticatedUserKey = self.personKey[indexPath.row]
         self.navigationController?.pushViewController(destinationVC, animated: true)
-        
     }
-    
 }
 
 

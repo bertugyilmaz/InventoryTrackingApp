@@ -13,6 +13,7 @@
 		0133609E1FDB183F008A19BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0133609D1FDB183F008A19BD /* Assets.xcassets */; };
 		013360A11FDB183F008A19BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133609F1FDB183F008A19BD /* LaunchScreen.storyboard */; };
 		013360AC1FDB183F008A19BD /* InventoryTrackingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */; };
+		01659D721FE1CA59003C2352 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01659D711FE1CA59003C2352 /* Helper.swift */; };
 		019BD8661FDD737B0068E223 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 019BD8651FDD737B0068E223 /* GoogleService-Info.plist */; };
 		019BD8681FDD7BA80068E223 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BD8671FDD7BA80068E223 /* DataService.swift */; };
 		01AF03C41FDCB37500B64C41 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */; };
@@ -59,6 +60,7 @@
 		013360A71FDB183F008A19BD /* InventoryTrackingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventoryTrackingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTrackingAppTests.swift; sourceTree = "<group>"; };
 		013360AD1FDB183F008A19BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01659D711FE1CA59003C2352 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		019BD8651FDD737B0068E223 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		019BD8671FDD7BA80068E223 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		01AF03C31FDCB37500B64C41 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
@@ -219,9 +221,10 @@
 		611324FD1FDB1F8F00B61FC1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				01659D711FE1CA59003C2352 /* Helper.swift */,
 				611324FE1FDB1FA000B61FC1 /* Constants.swift */,
-				611325001FDB1FD700B61FC1 /* Extensions.swift */,
 				019BD8671FDD7BA80068E223 /* DataService.swift */,
+				611325001FDB1FD700B61FC1 /* Extensions.swift */,
 				61349AF31FDDBD370082B939 /* Types.swift */,
 			);
 			path = Helpers;
@@ -303,7 +306,7 @@
 				TargetAttributes = {
 					013360921FDB183F008A19BD = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = B4F2B776R3;
+						DevelopmentTeam = 37V52RJ6S5;
 						ProvisioningStyle = Automatic;
 					};
 					013360A61FDB183F008A19BD = {
@@ -480,6 +483,7 @@
 				61C688541FDD38D200F0E63D /* itemSetAddButton.swift in Sources */,
 				611324FA1FDB1F1600B61FC1 /* roundedButton.swift in Sources */,
 				019BD8681FDD7BA80068E223 /* DataService.swift in Sources */,
+				01659D721FE1CA59003C2352 /* Helper.swift in Sources */,
 				61349AF11FDDBC130082B939 /* User.swift in Sources */,
 				61ACE62B1FDFE0B70038024C /* RoomDetailCell.swift in Sources */,
 			);
@@ -621,10 +625,10 @@
 			baseConfigurationReference = 3E402BA513F7A4B7E2B08001 /* Pods-InventoryTrackingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B4F2B776R3;
+				DEVELOPMENT_TEAM = 37V52RJ6S5;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -635,10 +639,10 @@
 			baseConfigurationReference = 52C9270982229EA1E992E65F /* Pods-InventoryTrackingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B4F2B776R3;
+				DEVELOPMENT_TEAM = 37V52RJ6S5;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
