@@ -43,7 +43,8 @@ class BaseVC: UIViewController{
     }
 
     func logoutButtonAction(sender: UIButton){
-           print("Selam ben logout edicem seni")
+        UserDefaults.standard.removeObject(forKey: "userDict")
+        self.navigationController?.popViewController(animated: true)    
     }
     
     func backButtonAction(sender: UIButton){

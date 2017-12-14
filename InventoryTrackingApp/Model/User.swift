@@ -23,4 +23,14 @@ class User  {
         self.user_Name = userName
         self.isAdmin = isAdmin
     }
+    
+    func exportDictionary() -> Dictionary<String,AnyObject>{
+       
+        let dummyDictionary: Dictionary<String,AnyObject> = [
+            "user_Id": user_Id as AnyObject,
+            "UserName" : user_Name as AnyObject,
+            "IsAdmin": isAdmin as AnyObject
+        ]
+        return dummyDictionary
+    }
 }
