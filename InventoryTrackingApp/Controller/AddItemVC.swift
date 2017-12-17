@@ -9,65 +9,41 @@
 import UIKit
 
 class AddItemVC: BaseVC {
-    @IBOutlet weak var stackType : UIStackView!
-    @IBOutlet weak var stackName : UIStackView!
-    @IBOutlet weak var stackCount : UIStackView!
-    @IBOutlet weak var stackPrice : UIStackView!
-    @IBOutlet weak var kaydetButton : UIButton!
-    @IBOutlet weak var gestureType : UIGestureRecognizer!
-    @IBOutlet weak var gestureName : UIGestureRecognizer!
-    @IBOutlet weak var gestureCount : UIGestureRecognizer!
-    @IBOutlet weak var gesturePrice : UIGestureRecognizer!
-
+ 
+    @IBOutlet weak var tableView: UITableView!
     var alertView: UIAlertController!
+    var cellArr: [[String]]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.createAlertView()
-        // Do any additional setup after loading the view.
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("AddItemVC")
-        setRightBarButtonItem()
-        setGesturSelectors()
-        HideStackVisibilty()
+        self.cellArr = [["Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi", "Demirbaş Fiyatı"],
+                        ["roomType","itemName","itemCount","search"],
+                        ["extended","","",""]]
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.reloadData()
+        
+        self.setRightBarButtonItem()
     }
+    
     func setRightBarButtonItem()  {
         let rightButton : UIBarButtonItem = UIBarButtonItem(title: "Tür Ekle", style: .plain, target: self, action: #selector(turEkle))
         self.navItem.setRightBarButton(rightButton, animated: true)
     }
+    
     func turEkle()  {
+        self.createAlertView(index: -1)
         self.present(alertView, animated: true, completion: nil)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    func HideStackVisibilty()  {
-        self.stackPrice.isHidden = true
-        self.stackName.isHidden = true
-        self.stackCount.isHidden = true
-        self.kaydetButton.isHidden = true
-    }
-    func setGesturSelectors()  {
-        self.gestureType.addTarget(self, action: #selector(turPressed))
-        self.gestureName.addTarget(self, action: #selector(namePressed))
-        self.gestureCount.addTarget(self, action: #selector(countPressed))
-        self.gesturePrice.addTarget(self, action: #selector(pricePressed))
-    }
-    func turPressed()  {
-        self.stackName.isHidden = false
-    }
-    func namePressed()  {
-         self.stackCount.isHidden = false
-    }
-    func countPressed()  {
-         self.stackPrice.isHidden = false
-    }
-    func pricePressed()  {
-        self.kaydetButton.isHidden = false
-    }
-    func createAlertView(){
+   
+    func createAlertView(index: Int){
+        
         self.alertView = UIAlertController(title: "Tür Ekle", message: "Satın alacağınız demirbaş için tür ekleyiniz.", preferredStyle: .alert)
         alertView.addTextField { (getRoomTextFields) in
             getRoomTextFields.placeholder = "Tür adını giriniz"
@@ -76,10 +52,49 @@ class AddItemVC: BaseVC {
         
         let okButtonAction = UIAlertAction(title: "Seç", style: .default) { (alertAction) in
             let textField = self.alertView.textFields?[0] as! UITextField
-            print(textField.text)
+            if self.cellArr[2].count - 1 != index && index != -1 {
+                self.cellArr[2][index + 1] = "extended"
+                print(self.cellArr[2][index])
+                self.tableView.reloadData()
+            }
+            
         }
         
         alertView.addAction(okButtonAction)
+    }
+}
+
+extension AddItemVC: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellArr[0].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = cellArr[0][indexPath.row]
+        cell.imageView?.image = UIImage(named: cellArr[1][indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if cellArr[2][indexPath.row] != "" {
+            self.createAlertView(index: indexPath.row)
+            
+            self.alertView.title = "Seçim Gerçekleştirin"
+            self.alertView.message = self.cellArr[0][indexPath.row]
+            
+            self.present(self.alertView, animated: true, completion: nil)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       
+        if cellArr[2][indexPath.row] == "" {
+            return 0
+        }else {
+            return 60
+        }
     }
 }
 

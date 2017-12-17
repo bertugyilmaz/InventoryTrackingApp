@@ -15,6 +15,7 @@ extension String {
     func isEqualToString(find: String) -> Bool {
         return String(format: self) == find
     }
+
 }
 
 

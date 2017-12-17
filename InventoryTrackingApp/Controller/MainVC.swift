@@ -59,7 +59,6 @@ class MainVC: BaseVC {
             }, withCancel: nil)
         }
     }
-    
 }
 extension MainVC: UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
