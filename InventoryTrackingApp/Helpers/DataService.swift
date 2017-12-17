@@ -19,10 +19,16 @@ public class DataServices {
     private var _FIR_AUTH = Auth.auth()
     private var _REF_ITEMS = DB_BASE.child("Items")
     private var _REF_ROOMS = DB_BASE.child("Rooms")
+    private var _REF_CATEGORIES = DB_BASE.child("Categories")
+    
+    var REF_CATEGORIES: DatabaseReference {
+        return _REF_CATEGORIES
+    }
     
     var REF_ITEMS: DatabaseReference {
         return _REF_ITEMS
     }
+    
     var REF_ROOMS: DatabaseReference {
         return _REF_ROOMS
     }
@@ -37,5 +43,16 @@ public class DataServices {
     
     func createFirebaseUser(uid: String, userData: Dictionary<String,AnyObject>){
         _REF_USERS.child(uid).updateChildValues(userData)
+    }
+    
+    func addCategories(name: String){
+        _REF_CATEGORIES.updateChildValues([name:1])
+    }
+    func addItem(categorie:String,itemData : Dictionary<String,AnyObject>){
+        REF_ITEMS.child(categorie).childByAutoId().updateChildValues(itemData)
+    }
+    func addRoom(roomData : Dictionary<String,AnyObject>){
+        let unique = REF_ROOMS.childByAutoId()
+        unique.updateChildValues(roomData)
     }
 }
