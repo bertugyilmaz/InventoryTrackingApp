@@ -18,6 +18,12 @@ class MainVC: BaseVC {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+//        let standartUser = UserDefaults.standard.value(forKey: "userId")
+//        let room = Room(roomId: "123123123", roomType: "Yemekhane", itemKeys: [], itemCount: "")
+//        room.AuthenticatedPerson = User(userId: standartUser as! String  , userName: "Bertuğ")
+//        DataServices.ds.addRoom(roomData: room.exportDictionary())
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +35,7 @@ class MainVC: BaseVC {
             }
         }
     }
+    
     var personKey = [String]()
     func getRooms(completion: @escaping (Bool)->())  {
         DispatchQueue.main.async {
@@ -37,22 +44,18 @@ class MainVC: BaseVC {
                 print(snapshot.key)
                 if let dict = snapshot.value as? Dictionary<String,AnyObject>{
                     for roomId in dict.keys{
-                        print("Onur :\(roomId)")
+                        
                         if let roomdict = dict[roomId] as? Dictionary<String,AnyObject>{
-                            let roomItemCount = roomdict["ItemCounts"] as! String
-                            if let itemsdict = roomdict["Items"] as? Dictionary<String,AnyObject>{
-                                let roomtype = roomdict["RoomType"] as! String
-                                self.personKey.append(roomdict["AuthenticatedPerson"] as! String)
-                                let itemIds = itemsdict.keys
-                                var itemKeys = [String]()
-                                for key in itemIds{
-                                    itemKeys.append(key)
-                                }
-                                
-                                self.Rooms.append(Room(roomId: roomId, roomType: roomtype, itemKeys: itemKeys,itemCount: roomItemCount))
-                                self.tableView.reloadData()
-                                completion(true)
-                            }
+                            
+                            let roomtype = roomdict["RoomType"] as! String
+                            let authId = roomdict["AuthenticatedPerson"] as! String
+                            let room = Room(roomId: roomId, roomType: roomtype, itemKeys: [],itemCount: "")
+                            room.AuthenticatedPerson = User(userId: authId, userName: "")
+                        
+                            self.Rooms.append(room)
+                            
+                            self.tableView.reloadData()
+                            completion(true)
                         }
                     }
                 }
@@ -72,7 +75,6 @@ extension MainVC: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RoomTableViewCell
         if(!Rooms.isEmpty){
             cell.room = Rooms[indexPath.row]
-            cell.countLabel.text = Rooms[indexPath.row].itemCount
         }
         return cell
     }

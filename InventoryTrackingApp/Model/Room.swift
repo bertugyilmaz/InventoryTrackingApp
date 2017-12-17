@@ -16,8 +16,7 @@ class Room {
     private var user : User?
     var AuthenticatedPerson :User!{
         get{
-            if(user ==
-                nil){
+            if(user == nil){
                 return User(userId: "-1", userName: "Kullanıcı Atanmadı")
             }
             return user
@@ -43,5 +42,13 @@ class Room {
         self.room_Type = roomType
         self.ItemKeys = itemKeys
         self.ItemCounts = itemCount
+    }
+    
+    func exportDictionary() -> Dictionary<String,AnyObject>{
+        let dummyDictionary: Dictionary<String,AnyObject> = [
+            "RoomType": room_Type as AnyObject,
+            "AuthenticatedPerson": AuthenticatedPerson.Id as AnyObject
+        ]
+        return dummyDictionary
     }
 }

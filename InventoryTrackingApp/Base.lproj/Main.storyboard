@@ -566,6 +566,9 @@
                                                 <constraint firstAttribute="height" constant="41" id="tfS-xf-VDA"/>
                                             </constraints>
                                             <state key="normal" title="Kaydet"/>
+                                            <connections>
+                                                <action selector="savePressed:" destination="OSN-29-8kx" eventType="touchUpInside" id="LsG-YV-qB6"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -20,8 +20,6 @@ class LoginVC : BaseVC {
         super.viewDidLoad()
         self.loggedinBefore()
         
-        self.navigationController?.isNavigationBarHidden = true
-        
         loginButton.addTarget(self, action: #selector(loginButtonAction(sender:)), for: .touchUpInside)
 
 //        Test için kullanıcı oluşturuldu.
@@ -31,6 +29,9 @@ class LoginVC : BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        
+        userNameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     func loginButtonAction(sender: roundedButton){
@@ -70,11 +71,13 @@ class LoginVC : BaseVC {
     }
     
     func setUserInfoOnUserDefaults(){
-        UserDefaults.standard.set(self.userInfo.exportDictionary(), forKey: "userDict")
+        print(self.userInfo.Id)
+        UserDefaults.standard.set(self.userInfo.Id, forKey: "userId")
+        UserDefaults.standard.set(self.userInfo.Name, forKey: "userEmail")
     }
     
     func loggedinBefore(){
-        if UserDefaults.standard.dictionary(forKey: "userDict") != nil {
+        if UserDefaults.standard.value(forKey: "userId") != nil {
             let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTabbarVC")
             self.navigationController?.pushViewController(mainVC!, animated: true)
         }else {
