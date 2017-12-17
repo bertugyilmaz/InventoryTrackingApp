@@ -46,4 +46,15 @@ class Item {
         self.IsAvailable = isavailable
     }
     
+    func exportDictionary() -> Dictionary<String,AnyObject>{
+        let dummyDictionary: Dictionary<String,AnyObject> = [
+            "ItemId": Item_Id as AnyObject,
+            "ItemCount": Item_Count as AnyObject,
+            "ItemName": Item_Name as AnyObject,
+            "ItemPrice": Item_Price as AnyObject,
+            "ItemType": Item_Type as AnyObject,
+            "IsAvailable": isAvailable as AnyObject
+        ]
+        return dummyDictionary
+    }
 }

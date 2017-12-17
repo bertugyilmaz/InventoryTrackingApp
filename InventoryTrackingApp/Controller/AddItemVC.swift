@@ -13,9 +13,13 @@ class AddItemVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     var alertView: UIAlertController!
     var cellArr: [[String]]!
+    var itemData : Dictionary<String,AnyObject>!
+    var pickerView = UIPickerView()
+    var categorieTypes = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getItemType()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,21 +50,41 @@ class AddItemVC: BaseVC {
         
         self.alertView = UIAlertController(title: "Tür Ekle", message: "Satın alacağınız demirbaş için tür ekleyiniz.", preferredStyle: .alert)
         alertView.addTextField { (getRoomTextFields) in
-            getRoomTextFields.placeholder = "Tür adını giriniz"
+            getRoomTextFields.inputView = self.pickerView
         }
         alertView.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
         
         let okButtonAction = UIAlertAction(title: "Seç", style: .default) { (alertAction) in
-            let textField = self.alertView.textFields?[0] as! UITextField
+            let textField = self.alertView.textFields?[0] 
+           
             if self.cellArr[2].count - 1 != index && index != -1 {
                 self.cellArr[2][index + 1] = "extended"
-                print(self.cellArr[2][index])
                 self.tableView.reloadData()
+                
             }
             
+            if index == -1 && !(textField?.text?.isEmpty)!{
+                if let text = self.alertView.textFields![0].text {
+                    DataServices.ds.addCategories(name: text)
+                }
+            }
         }
         
         alertView.addAction(okButtonAction)
+    }
+    
+    func getItemType()  {
+        DataServices.ds.REF_CATEGORIES.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let categories = snapshot.value as? Dictionary<String,AnyObject>{
+                for item in categories.keys{
+                    self.categorieTypes.append(item)
+                }
+            }
+        })
+    }
+    
+    @IBAction func savePressed(_ sender: Any) {
+        
     }
 }
 
@@ -81,8 +105,8 @@ extension AddItemVC: UITableViewDelegate, UITableViewDataSource{
         if cellArr[2][indexPath.row] != "" {
             self.createAlertView(index: indexPath.row)
             
-            self.alertView.title = "Seçim Gerçekleştirin"
-            self.alertView.message = self.cellArr[0][indexPath.row]
+            self.alertView.title = self.cellArr[0][indexPath.row]
+            self.alertView.message = "Seçim Gerçekleştirin"
             
             self.present(self.alertView, animated: true, completion: nil)
         }
@@ -98,4 +122,25 @@ extension AddItemVC: UITableViewDelegate, UITableViewDataSource{
     }
 }
 
+extension AddItemVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        self.categorieTypes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 44
+    }
+}
 
