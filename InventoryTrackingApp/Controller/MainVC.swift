@@ -18,7 +18,8 @@ class MainVC: BaseVC {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
+
+//        Database e örnek data eklendi
 //        let standartUser = UserDefaults.standard.value(forKey: "userId")
 //        let room = Room(roomId: "123123123", roomType: "Yemekhane", itemKeys: [], itemCount: "")
 //        room.AuthenticatedPerson = User(userId: standartUser as! String  , userName: "Bertuğ")
