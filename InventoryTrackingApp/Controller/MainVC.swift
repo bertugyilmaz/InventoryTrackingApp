@@ -37,7 +37,7 @@ class MainVC: BaseVC {
         }
     }
     
-    var personKey = [String]()
+//    var personKey = [String]()
     func getRooms(completion: @escaping (Bool)->())  {
         DispatchQueue.main.async {
             DataServices.ds.REF_ROOMS.observe(.value, with: { (snapshot) in
@@ -83,7 +83,7 @@ extension MainVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "RoomDetailVC") as! RoomDetailVC
         destinationVC.room = self.Rooms[indexPath.row]
-        destinationVC.AuthenticatedUserKey = self.personKey[indexPath.row]
+        destinationVC.AuthenticatedUserKey = self.Rooms[indexPath.row].AuthenticatedPerson.Id
         self.navigationController?.pushViewController(destinationVC, animated: true)
     }
 }

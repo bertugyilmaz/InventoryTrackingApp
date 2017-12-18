@@ -608,6 +608,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Demirbaş Alımı" image="dolar-icon" id="phT-yJ-Tjh"/>
                     <connections>
+                        <outlet property="saveButton" destination="uXD-hn-mUj" id="hKc-ds-Lsy"/>
                         <outlet property="tableView" destination="aVi-3w-lUR" id="FIT-zJ-MOp"/>
                     </connections>
                 </viewController>

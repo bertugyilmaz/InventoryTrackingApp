@@ -52,8 +52,8 @@ public class DataServices {
     func addCategories(name: String){
         _REF_CATEGORIES.updateChildValues([name:1])
     }
-    func addItem(categorie:String,itemData : Dictionary<String,AnyObject>){
-        REF_ITEMS.child(categorie).childByAutoId().updateChildValues(itemData)
+    func addItem(itemData : Dictionary<String,AnyObject>){
+        REF_ITEMS.childByAutoId().updateChildValues(itemData)
     }
     func addRoom(roomData: Dictionary<String,AnyObject>){
         let unique = REF_ROOMS.childByAutoId()
