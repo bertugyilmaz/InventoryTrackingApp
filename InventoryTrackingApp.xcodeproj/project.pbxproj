@@ -306,7 +306,7 @@
 				TargetAttributes = {
 					013360921FDB183F008A19BD = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 37V52RJ6S5;
+						DevelopmentTeam = B4F2B776R3;
 						ProvisioningStyle = Automatic;
 					};
 					013360A61FDB183F008A19BD = {
@@ -625,10 +625,10 @@
 			baseConfigurationReference = 3E402BA513F7A4B7E2B08001 /* Pods-InventoryTrackingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37V52RJ6S5;
+				DEVELOPMENT_TEAM = B4F2B776R3;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1InventoryTrackingApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -639,10 +639,10 @@
 			baseConfigurationReference = 52C9270982229EA1E992E65F /* Pods-InventoryTrackingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37V52RJ6S5;
+				DEVELOPMENT_TEAM = B4F2B776R3;
 				INFOPLIST_FILE = InventoryTrackingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.InventoryTrackingApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1InventoryTrackingApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

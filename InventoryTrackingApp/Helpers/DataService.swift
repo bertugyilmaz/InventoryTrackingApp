@@ -14,6 +14,7 @@ import FirebaseAuth
 let DB_BASE  = Database.database().reference()
 
 public class DataServices {
+    
     static let ds = DataServices()
     private var _REF_USERS = DB_BASE.child("Users")
     private var _FIR_AUTH = Auth.auth()

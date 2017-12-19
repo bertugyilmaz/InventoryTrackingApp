@@ -92,7 +92,8 @@ class AddItemVC: BaseVC {
                     print((textField?.text!)!)
                     break
                 default:
-                    print("noluyok aq")
+                    break
+                   
                 }
                 self.tableView.reloadData()
             }
