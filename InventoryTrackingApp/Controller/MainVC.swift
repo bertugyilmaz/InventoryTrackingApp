@@ -71,7 +71,6 @@ class MainVC: BaseVC {
         }
         alertView.addAction(okButtonAction)
     }
-    
     func getRooms()  {
         DataServices.ds.REF_ROOMS.observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot.value)
@@ -103,6 +102,12 @@ extension MainVC: UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Rooms.count
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

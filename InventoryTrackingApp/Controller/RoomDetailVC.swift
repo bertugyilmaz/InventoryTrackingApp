@@ -21,17 +21,21 @@ class RoomDetailVC: BaseVC {
         }
     }
     var items = [Item]()
+    var stockItems = [Item]()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getItemsForRoom()
+        self.getItemDetail()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.responsiblePersonLabel.text = self.room.AuthenticatedPerson.Name
     }
-    var item : Item!
+    var deletedItem : Item!
+    
     func getPersonDetails()  {
         DispatchQueue.main.async {
             DataServices.ds.REF_USERS.child(self.AuthenticatedUserKey).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -45,6 +49,32 @@ class RoomDetailVC: BaseVC {
                 }
             })
         }
+    }
+    var gettingDetailCompleted : Bool = false
+    func getItemDetail() {
+        DataServices.ds.REF_ITEMS.observeSingleEvent(of: .value, with: { (snapshots) in
+            if let snapshot = snapshots.children.allObjects as? [DataSnapshot]{
+                var item : Item!
+                for snap in snapshot{
+                    print(snap)
+                    print("Onur : \(snapshots)")
+                    if let itemDict = snap.value as? Dictionary<String,AnyObject>{
+                        
+                        if let availableNumber = NSNumber(value: itemDict["IsAvailable"] as! Bool) as? NSNumber{
+                            
+                            item = Item(ItemId: snap.key, ItemCount: itemDict["ItemCount"] as! String, ItemName: itemDict["ItemName"] as! String,               ItemPrice:itemDict["ItemPrice"] as! String, ItemType: itemDict["ItemType"] as! String, isavailable: Int(availableNumber))
+                            self.stockItems.append(item)
+                        }else {
+                            print("Something went wrong --> getItemsForRoom")
+                        }
+                    }
+                }
+                
+                self.tableView.reloadData()
+            }
+        
+        })
+       
     }
     func getItemsForRoom(){
         DataServices.ds.REF_CONTAINER.child(self.room.Id).observeSingleEvent(of: .value, with: { (snapshots) in
@@ -70,15 +100,56 @@ class RoomDetailVC: BaseVC {
     }
     
     func DeleteItemFromRoom(index : IndexPath)  {
-        DataServices.ds.REF_ROOMS.child(self.room.Id).child("Items").child(self.items[index.row].Id).removeValue(completionBlock: { (error, ref) in
-            if error != nil {
-                print("Onur : \(error.debugDescription)")
-                return
-            }
-            self.items.remove(at: index.row)
-            self.tableView.deleteRows(at: [index], with: .automatic)
+        if(self.room.itemCount == "0"){
+            DataServices.ds.REF_CONTAINER.child(self.room.Id).child(self.items[index.row].Id).removeValue(completionBlock: { (error, ref) in
+                if error != nil{
+                    print("birşeyler oldu")
+                    return
+                }
+                for item in self.stockItems{
+                    if item.Id == self.items[index.row].Id{
+                        let first = Int(item.count)!
+                        let count = first + 1
+                        DataServices.ds.REF_ITEMS.child(self.items[index.row].Id).updateChildValues(["ItemCount":String(count)])
+                        self.items[index.row] = Item(ItemId: self.items[index.row].Id, ItemCount: self.room.itemCount, ItemName: self.items[index.row].name, ItemPrice: self.items[index.row].price, ItemType: self.items[index.row].type, isavailable: self.items[index.row].isAvailable == true ? 1 : 0)
+                        self.tableView.reloadData()
+                        break
+                    }
+                }
+                if self.room.itemCount == "0" {
+                    self.items.remove(at: index.row)
+                    self.tableView.deleteRows(at: [index], with: .automatic)
+                    self.tableView.reloadData()
+                }
+            })
+        }else{
+            DataServices.ds.REF_CONTAINER.child(self.room.Id).child(self.items[index.row].Id).updateChildValues(["ItemCount":self.room.itemCount], withCompletionBlock: { (error, ref) in
+                if error != nil{
+                    print("birşeyler oldu")
+                    return
+                }
+                for item in self.stockItems{
+                    if item.Id == self.items[index.row].Id{
+                        let first = Int(item.count)!
+                        let count = first + 1
+                        DataServices.ds.REF_ITEMS.child(self.items[index.row].Id).updateChildValues(["ItemCount":String(count)], withCompletionBlock: { (error, ref) in
+                            if error != nil{
+                                print("birşeyler oldu")
+                                return
+                            }
+                            self.items[index.row] = Item(ItemId: self.items[index.row].Id, ItemCount: self.room.itemCount, ItemName: self.items[index.row].name, ItemPrice: self.items[index.row].price, ItemType: self.items[index.row].type, isavailable: self.items[index.row].isAvailable == true ? 1 : 0)
+                            self.tableView.reloadData()
+                            
+                        })
+                        break
+                    }
+                }
+            
         })
+        
+        
     }
+}
 }
 extension RoomDetailVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,14 +167,13 @@ extension RoomDetailVC: UITableViewDelegate,UITableViewDataSource{
         return true
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        let Delete = UITableViewRowAction(style: .default, title: "Atama Kaldır") { (action, indexPath) in
+            let Delete = UITableViewRowAction(style: .default, title: "Atama Kaldır") { (action, indexPath) in
            print("GG")
-           //  burasında user kontrolu yapılacak admin sadece odadan eşya çıkarabilir.
-            self.DeleteItemFromRoom(index: indexPath)
-            let count = Int(self.room.itemCount)! - 1
-            DataServices.ds.REF_ROOMS.child(self.room.Id).updateChildValues(["ItemCounts" : "\(count)"])
-            DataServices.ds.REF_ITEMS.child(self.items[indexPath.row].Id).updateChildValues(["IsAvailable" : 1])
+                
+                    let countForCOntainer = Int(self.items[indexPath.row].count)! - 1
+                    self.room = Room(roomId: self.room.Id, roomType: self.room.roomType, itemKeys: self.room.itemsKeys, itemCount: String(countForCOntainer), name: self.room.roomName)
+                    self.DeleteItemFromRoom(index: indexPath)
+                
         }
         return [Delete]
     }
