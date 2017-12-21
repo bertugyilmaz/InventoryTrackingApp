@@ -18,6 +18,7 @@ class PersonelVC: BaseVC {
     var users = [User]()
     var rooms = [Room]()
     var selectedUser = ""
+    var alert = Helper.showAlertView(title: "", message: "İşleminiz Başarılı")    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +90,7 @@ class PersonelVC: BaseVC {
                     let index = self.pickerView.selectedRow(inComponent: 0)
                     
                     DataServices.ds.setEmployer(roomId: self.rooms[index].Id, uId: self.selectedUser)
+                    self.present(self.alert, animated: true, completion: nil)
                 }
             }
         }

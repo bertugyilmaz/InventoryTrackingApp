@@ -13,6 +13,7 @@ class AddItemVC: BaseVC {
     @IBOutlet weak var saveButton: itemSetAddButton!
     @IBOutlet weak var tableView: UITableView!
     var alertView: UIAlertController!
+    var attentionAlert = Helper.showAlertView(title: "", message: "İşleminiz Başarılı")
     var cellArr: [[String]]!
     var itemData: Item!
     var pickerView = UIPickerView()
@@ -123,6 +124,7 @@ class AddItemVC: BaseVC {
     @IBAction func savePressed(_ sender: Any) {
         self.itemData = Item(ItemId: "", ItemCount: selectedCount, ItemName: selectedName, ItemPrice: selectedPrice, ItemType: selectedType, isavailable: 1)
         DataServices.ds.addItem(itemData: self.itemData.exportDictionary())
+        self.present(self.attentionAlert, animated: true, completion: nil)
     }
 }
 

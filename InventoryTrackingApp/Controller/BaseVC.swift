@@ -11,6 +11,7 @@ import UIKit
 class BaseVC: UIViewController{
 
     var navItem: UINavigationItem!
+    var activityController: UIActivityViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,11 @@ class BaseVC: UIViewController{
     
     func printButtonAction(sender: UIButton){
         print("Selam ben print edicem seni")
+        self.activityController = UIActivityViewController(activityItems: [], applicationActivities: nil)
+        self.activityController.popoverPresentationController?.sourceView = self.view
+        self.activityController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        
+        self.present(self.activityController, animated: true, completion: nil)
     }
     
     func createButton(img: String, action: Selector )-> UIButton{

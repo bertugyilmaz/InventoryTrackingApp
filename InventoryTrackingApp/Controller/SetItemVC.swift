@@ -13,6 +13,7 @@ class SetItemVC: BaseVC {
     @IBOutlet weak var saveButton: itemSetAddButton!
     @IBOutlet weak var tableView: UITableView!
     var alertView: UIAlertController!
+    var attentionAlert = Helper.showAlertView(title: "", message: "İşleminiz Başarılı")
     var cellArr: [[String]]!
     var items = [Item]()
     var pickerView = UIPickerView()
@@ -35,8 +36,14 @@ class SetItemVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("AddItemVC")
-        
         self.clearAllAttr()
+        self.rooms.removeAll()
+        self.items.removeAll()
+        self.categorieTypes.removeAll()
+        self.getRooms()
+        self.getItems()
+        self.getItemType()
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.pickerView.delegate = self
@@ -67,20 +74,15 @@ class SetItemVC: BaseVC {
                         ["extended","","",""]]
         self.saveButton.alpha = 0
         self.selectedItem = nil
-        self.categorieTypes = [String]()
+//        self.categorieTypes = [String]()
         self.filteredItems = [Item]()
         self.selectedType = ""
         self.selectedName = ""
         self.selectedCount = ""
-        var selectedItemCountForContainer = ""
+        self.selectedItemCountForContainer = ""
         self.selectedRoom = ""
-        self.alertView = nil
-        self.items = [Item]()
-        self.pickerView = UIPickerView()
-        self.rooms = [String]()
-//        self.getItems()
-        self.getRooms()
         self.tableView.reloadData()
+        self.pickerView.reloadComponent(0)
     }
     func createAlertView(index: Int){
         
@@ -90,22 +92,26 @@ class SetItemVC: BaseVC {
                 textfield.inputView = self.pickerView
                 if (index == 0){
                     textfield.text = self.rooms[self.pickerView.selectedRow(inComponent: 0)]
-                    self.getItemType()
                 }else if (index == 1){
-                    self.getItems()
                     if !self.categorieTypes.isEmpty{
                         self.pickerView.selectRow(0, inComponent: 0, animated: false)
                         textfield.text = self.categorieTypes[self.pickerView.selectedRow(inComponent: 0)]
+                    }else{
+                        self.present(Helper.showAlertView(title: "Bu tipte eşya yoktur!", message: ""), animated: true, completion: nil)
                     }
                 }else if(index == 2){
-                    if !self.items.isEmpty{
+                    if !self.filteredItems.isEmpty{
                         self.pickerView.selectRow(0, inComponent: 0, animated: true)
-                        textfield.text = self.items[self.pickerView.selectedRow(inComponent: 0)].name
+                        textfield.text = self.filteredItems[self.pickerView.selectedRow(inComponent: 0)].name
+                    }else{
+                        self.present(Helper.showAlertView(title: "Bu tipte eşya yoktur!", message: ""), animated: true, completion: nil)
                     }
                 }else if index == 3 {
                     if !self.items.isEmpty{
                         self.pickerView.selectRow(0, inComponent: 0, animated: true)
                         textfield.text = String(self.pickerView.selectedRow(inComponent: 0) + 1)
+                    }else{
+                        self.present(Helper.showAlertView(title: "Bu tipte eşya yoktur!", message: ""), animated: true, completion: nil)
                     }
                 }
                 
@@ -156,10 +162,11 @@ class SetItemVC: BaseVC {
                 var item : Item!
                 for snap in snapshot{
                     if let itemDict = snap.value as? Dictionary<String,AnyObject>{
-                        let availability = itemDict["IsAvailable"] as! Int
-                        if(availability == 1){
-                            item = Item(ItemId: snap.key, ItemCount: itemDict["ItemCount"] as! String, ItemName: itemDict["ItemName"] as! String, ItemPrice:itemDict["ItemPrice"] as! String, ItemType: itemDict["ItemType"] as! String, isavailable: availability)
-                            self.items.append(item)
+                        let availability = itemDict["IsAvailable"] as! Bool
+                        if(availability){
+                            let availabilityNumber = NSNumber(value: availability)
+                            item = Item(ItemId: snap.key, ItemCount: itemDict["ItemCount"] as! String, ItemName: itemDict["ItemName"] as! String, ItemPrice:itemDict["ItemPrice"] as! String, ItemType: itemDict["ItemType"] as! String, isavailable: Int(availabilityNumber))
+                            self.items.append(item) 
                         }else{
                             continue
                         }
@@ -195,6 +202,7 @@ class SetItemVC: BaseVC {
         let dummyItem = Item(ItemId: self.selectedItem.Id, ItemCount: updatedCount, ItemName: self.selectedItem.name, ItemPrice: self.selectedItem.price, ItemType: self.selectedItem.type, isavailable: 1)
         DataServices.ds.addRoomsInContainer(roomId: self.selectedRoom, itemData: dummyItem.exportDictionary())
         self.clearAllAttr()
+        self.present(self.attentionAlert, animated: true, completion: nil)
     }
     
 }
@@ -217,7 +225,6 @@ extension SetItemVC: UITableViewDelegate, UITableViewDataSource{
             if self.selectedRoom != "" && indexPath.row == 0{
                 self.saveButton.alpha = 0
                 self.selectedItem = nil
-                self.categorieTypes = [String]()
                 self.filteredItems = [Item]()
                 self.selectedType = ""
                 self.selectedName = ""
@@ -226,7 +233,7 @@ extension SetItemVC: UITableViewDelegate, UITableViewDataSource{
                 self.cellArr = [["Oda Seçimi", "Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi"],
                                 ["roomSelection","roomType","itemName","itemCount"],
                                 ["extended","","",""]]
-                self.items = [Item]()
+                
                 self.pickerView.reloadComponent(0)
                 self.tableView.reloadData()
                 self.alertView.textFields![0].text = ""
@@ -241,7 +248,6 @@ extension SetItemVC: UITableViewDelegate, UITableViewDataSource{
                 self.cellArr = [["Oda Seçimi", "Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi"],
                                 ["roomSelection","roomType","itemName","itemCount"],
                                 ["extended","extended","",""]]
-                self.items = [Item]()
                 self.pickerView.reloadComponent(0)
                 self.tableView.reloadData()
                 self.alertView.textFields![0].text = ""
@@ -306,12 +312,16 @@ extension SetItemVC: UIPickerViewDelegate, UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if self.selectedRoom == "" {
+            self.alertView.textFields![0].text = self.rooms[row]
             return self.rooms[row]
         }else if (self.selectedType == "") {
+            self.alertView.textFields![0].text = self.categorieTypes[row]
             return self.categorieTypes[row]
         }else if (self.selectedName == ""){
+            self.alertView.textFields![0].text = self.filteredItems[row].name
             return self.filteredItems[row].name
         }else{
+            self.alertView.textFields![0].text = "\(row + 1)"
             return "\(row + 1)"
         }
     }
