@@ -13,7 +13,11 @@ class Room {
     private let room_Type : String!
     private let ItemKeys : [String]?
     private let ItemCounts : String!
+    private let room_Name : String!
     private var user : User?
+    var roomName : String{
+        return room_Name
+    }
     var AuthenticatedPerson :User!{
         get{
             if(user == nil){
@@ -37,16 +41,18 @@ class Room {
     var itemsKeys : [String]!{
         return ItemKeys
     }
-    init(roomId:String,roomType:String!,itemKeys:[String],itemCount : String) {
+    init(roomId:String,roomType:String!,itemKeys:[String],itemCount : String,name:String) {
         self.room_Id = roomId
         self.room_Type = roomType
         self.ItemKeys = itemKeys
         self.ItemCounts = itemCount
+        self.room_Name = name
     }
     
     func exportDictionary() -> Dictionary<String,AnyObject>{
         let dummyDictionary: Dictionary<String,AnyObject> = [
             "RoomType": room_Type as AnyObject,
+            "RoomName": room_Name as AnyObject,
             "AuthenticatedPerson": AuthenticatedPerson.Id as AnyObject
         ]
         return dummyDictionary

@@ -46,6 +46,9 @@ public class DataServices {
     var FIR_AUTH: Auth {
         return _FIR_AUTH
     }
+    func createRoom(roomData : Dictionary<String,AnyObject>)  {
+        _REF_ROOMS.childByAutoId().updateChildValues(roomData)
+    }
     
     func createFirebaseUser(uid: String, userData: Dictionary<String,AnyObject>){
         _REF_USERS.child(uid).updateChildValues(userData)
@@ -61,6 +64,6 @@ public class DataServices {
         unique.updateChildValues(roomData)
     }
     func addRoomsInContainer(roomId: String, itemData: Dictionary<String,AnyObject>){
-        _REF_CONTAINER.child(roomId).updateChildValues(itemData)
+        _REF_CONTAINER.child(roomId).child(itemData["ItemId"] as! String).updateChildValues(itemData)
     }
 }

@@ -289,7 +289,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oda Kodu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXX-3u-cMt">
-                                                    <rect key="frame" x="90" y="23.5" width="68" height="17"/>
+                                                    <rect key="frame" x="90" y="23.5" width="117" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -300,20 +300,20 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toplam Demirbaş:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b70-GL-ZTi">
-                                                    <rect key="frame" x="90" y="65.5" width="116.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oda Adı :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b70-GL-ZTi">
+                                                    <rect key="frame" x="90" y="65.5" width="117" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Laboratuvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kje-pP-xlP">
-                                                    <rect key="frame" x="207" y="37" width="128" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laboratuvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kje-pP-xlP">
+                                                    <rect key="frame" x="214" y="44.5" width="128" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E30-nE-Inh">
-                                                    <rect key="frame" x="213.5" y="65.5" width="128.5" height="17"/>
+                                                    <rect key="frame" x="214" y="65.5" width="128" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -332,6 +332,7 @@
                                                 <constraint firstItem="kje-pP-xlP" firstAttribute="leading" secondItem="E30-nE-Inh" secondAttribute="leading" id="8fj-Mw-ASB"/>
                                                 <constraint firstItem="E30-nE-Inh" firstAttribute="centerY" secondItem="b70-GL-ZTi" secondAttribute="centerY" id="Cfu-a6-nFt"/>
                                                 <constraint firstAttribute="trailing" secondItem="E30-nE-Inh" secondAttribute="trailing" id="GbL-Gw-dA0"/>
+                                                <constraint firstItem="E30-nE-Inh" firstAttribute="width" secondItem="kje-pP-xlP" secondAttribute="width" id="Gcr-TD-mED"/>
                                                 <constraint firstItem="EXX-3u-cMt" firstAttribute="leading" secondItem="oFq-Wt-xYv" secondAttribute="trailing" constant="11" id="H36-X4-DIE"/>
                                                 <constraint firstItem="oFq-Wt-xYv" firstAttribute="leading" secondItem="r9F-EV-ddM" secondAttribute="leadingMargin" constant="14" id="ItC-aa-aEU"/>
                                                 <constraint firstItem="oFq-Wt-xYv" firstAttribute="centerY" secondItem="r9F-EV-ddM" secondAttribute="centerY" id="OGk-5A-ihY"/>
@@ -339,6 +340,8 @@
                                                 <constraint firstItem="b70-GL-ZTi" firstAttribute="leading" secondItem="XZN-0u-XK5" secondAttribute="leading" id="U1w-qA-Fav"/>
                                                 <constraint firstItem="XZN-0u-XK5" firstAttribute="top" secondItem="EXX-3u-cMt" secondAttribute="bottom" constant="4" id="UTX-sP-TEl"/>
                                                 <constraint firstItem="EXX-3u-cMt" firstAttribute="top" secondItem="oFq-Wt-xYv" secondAttribute="top" constant="-4" id="VRU-9R-hK7"/>
+                                                <constraint firstItem="kje-pP-xlP" firstAttribute="width" secondItem="SZl-9a-FaR" secondAttribute="width" id="eqV-aK-Qjq"/>
+                                                <constraint firstItem="b70-GL-ZTi" firstAttribute="width" secondItem="EXX-3u-cMt" secondAttribute="width" id="iEb-MA-mNB"/>
                                                 <constraint firstItem="E30-nE-Inh" firstAttribute="leading" secondItem="b70-GL-ZTi" secondAttribute="trailing" constant="7" id="jqi-Ja-Cq7"/>
                                                 <constraint firstItem="SZl-9a-FaR" firstAttribute="centerY" secondItem="EXX-3u-cMt" secondAttribute="centerY" id="meE-Mq-jOM"/>
                                                 <constraint firstItem="SZl-9a-FaR" firstAttribute="leading" secondItem="kje-pP-xlP" secondAttribute="leading" id="nEp-1t-qld"/>
@@ -516,7 +519,6 @@
                                             <outlet property="ItemCode" destination="Dly-qZ-uXt" id="xa2-xX-nvU"/>
                                             <outlet property="ItemCount" destination="qm0-lN-EX5" id="RTh-n3-cBz"/>
                                             <outlet property="ItemName" destination="5ov-cl-TrZ" id="0Sz-Lu-nf5"/>
-                                            <outlet property="ResponsiblePerson" destination="NKs-Hd-qlf" id="Lam-Th-dTc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -531,6 +533,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="responsiblePersonLabel" destination="NKs-Hd-qlf" id="ciZ-nZ-BtF"/>
                         <outlet property="tableView" destination="Hv8-Wz-u0W" id="hQd-Su-t9c"/>
                     </connections>
                 </viewController>

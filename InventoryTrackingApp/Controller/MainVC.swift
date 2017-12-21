@@ -13,7 +13,7 @@ class MainVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     var Rooms = [Room]()
     typealias getItemCompleted = () -> ()
-    
+    var alertView : UIAlertController!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
@@ -35,9 +35,35 @@ class MainVC: BaseVC {
                 return
             }
         }
+        let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addRoom(sender:)))
+        self.navItem.setRightBarButton(rightButton, animated: true)
     }
     
 //    var personKey = [String]()
+    func addRoom(sender: UIBarButtonItem) {
+        self.CreateAlertForAddRoom()
+        self.present(self.alertView, animated: true, completion: nil)
+    }
+    func CreateAlertForAddRoom()  {
+        self.alertView = UIAlertController(title: "Oda Ekle", message: "Ekleyeceğiniz oda bilgilerini giriniz.", preferredStyle: .alert)
+        alertView.addTextField { (textfield) in
+            textfield.placeholder = "Oda Adını Giriniz"
+        }
+        alertView.addTextField { (texfield) in
+            texfield.placeholder = "Oda Tipini Giriniz"
+        }
+        alertView.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
+        
+        let okButtonAction = UIAlertAction(title: "Seç", style: .default) { (alertAction) in
+            let name = self.alertView.textFields![0].text
+            let tip  = self.alertView.textFields![1].text
+            let room = Room(roomId: "", roomType: tip, itemKeys: [], itemCount: "", name: name!)
+            DataServices.ds.addRoom(roomData: room.exportDictionary())
+            self.Rooms.removeAll()
+        }
+        alertView.addAction(okButtonAction)
+    
+    }
     func getRooms(completion: @escaping (Bool)->())  {
         DispatchQueue.main.async {
             DataServices.ds.REF_ROOMS.observe(.value, with: { (snapshot) in
@@ -50,11 +76,12 @@ class MainVC: BaseVC {
                             
                             let roomtype = roomdict["RoomType"] as! String
                             let authId = roomdict["AuthenticatedPerson"] as! String
-                            let room = Room(roomId: roomId, roomType: roomtype, itemKeys: [],itemCount: "")
-                            room.AuthenticatedPerson = User(userId: authId, userName: "")
-                        
+                            let roomname = roomdict["RoomName"] as! String
+                            let room = Room(roomId: roomId, roomType: roomtype, itemKeys: [],itemCount: "",name : roomname)
+                            if (authId != "-1"){
+                                room.AuthenticatedPerson = User(userId: authId, userName: "")
+                            }
                             self.Rooms.append(room)
-                            
                             self.tableView.reloadData()
                             completion(true)
                         }

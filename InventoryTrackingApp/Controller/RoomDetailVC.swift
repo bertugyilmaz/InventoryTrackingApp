@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 class RoomDetailVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var responsiblePersonLabel : UILabel!
     var room : Room!
     var AuthenticatedUser : User!
     var AuthenticatedUserKey : String = ""{
         didSet{
-            self.getPersonDetails()
+            if room.AuthenticatedPerson != nil{
+               self.getPersonDetails()
+                return
+            }
+
         }
     }
     var items = [Item]()
@@ -23,15 +29,9 @@ class RoomDetailVC: BaseVC {
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.responsiblePersonLabel.text = room.AuthenticatedPerson.Name
         super.viewWillAppear(animated)
-        for key in room.itemsKeys{
-            self.getItemsForEachRoom(itemId: key, completion: { (success) in
-                guard success == true else{
-                    return
-                }
-                self.tableView.reloadData()
-            })
-        }
+        self.getItemsForRoom()
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
@@ -42,34 +42,30 @@ class RoomDetailVC: BaseVC {
                 if let user = snapshot.value as? Dictionary<String,AnyObject>{
                     let name  = user["UserName"] as! String
                     let Id = self.AuthenticatedUserKey
-                    let admin = user["IsAdmin"] as! Int
-                    if(admin == 0){
-                         self.AuthenticatedUser = User(userId: Id, userName: name, isAdmin: false)
-                    }else{
-                        self.AuthenticatedUser = User(userId: Id, userName: name, isAdmin: true)
-                    }
+                         self.room.AuthenticatedPerson = User(userId: Id, userName: name, isAdmin: false)
                 }
             })
         }
     }
-    func getItemsForEachRoom(itemId:String,completion :@escaping (Bool) -> ()){
-        DispatchQueue.main.async {
-            DataServices.ds.REF_ITEMS.child(itemId).observeSingleEvent(of: .value, with: { (snapshot) in
-                let id = snapshot.key
-                if let dict = snapshot.value as? Dictionary<String,AnyObject> {
-                    let count = dict["ItemCount"] as! String
-                    let name = dict["ItemName"] as! String
-                    let price = dict["ItemPrice"] as! String
-                    let type = dict["ItemType"] as! String
-                    let isAvailable = dict["IsAvailable"] as! Int
-                    self.item = Item(ItemId: id, ItemCount: count, ItemName: name, ItemPrice: price, ItemType: type, isavailable: isAvailable)
-                    self.items.append(self.item)
-                    self.item = nil
-                    completion(true)
+    func getItemsForRoom(){
+        DataServices.ds.REF_CONTAINER.child(self.room.Id).observeSingleEvent(of: .value, with: { (snapshots) in
+            if let snapshot = snapshots.children.allObjects as? [DataSnapshot]{
+                var item : Item!
+                for snap in snapshot{
+                    print(snap)
+                    print("Onur : \(snapshots)")
+                    if let itemDict = snap.value as? Dictionary<String,AnyObject>{
+                        let availability = itemDict["IsAvailable"] as! Int
+                            item = Item(ItemId: snap.key, ItemCount: itemDict["ItemCount"] as! String, ItemName: itemDict["ItemName"] as! String,               ItemPrice:itemDict["ItemPrice"] as! String, ItemType: itemDict["ItemType"] as! String, isavailable: availability)
+                            self.items.append(item)
+                    }
                 }
-            }, withCancel: nil)
-        }
+                self.tableView.reloadData()
+            }
+            
+        })
     }
+    
     func DeleteItemFromRoom(index : IndexPath)  {
         DataServices.ds.REF_ROOMS.child(self.room.Id).child("Items").child(self.items[index.row].Id).removeValue(completionBlock: { (error, ref) in
             if error != nil {
@@ -90,7 +86,6 @@ extension RoomDetailVC: UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RoomDetailCell
-        cell.ResponsiblePerson.text = AuthenticatedUser.Name
         cell.item = self.items[indexPath.row]
         return cell
     }
@@ -109,7 +104,7 @@ extension RoomDetailVC: UITableViewDelegate,UITableViewDataSource{
         }
         return [Delete]
     }
-    
+
     
 }
 

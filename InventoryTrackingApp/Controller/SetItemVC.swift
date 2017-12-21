@@ -14,7 +14,6 @@ class SetItemVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     var alertView: UIAlertController!
     var cellArr: [[String]]!
-    var itemData: Item!
     var items = [Item]()
     var pickerView = UIPickerView()
     var rooms = [String]()
@@ -26,39 +25,22 @@ class SetItemVC: BaseVC {
     var selectedName = ""
     var selectedCount = ""
     var selectedRoom = ""
+    var selectedItemCountForContainer = ""
+    var getRoomsCompleted : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("AddItemVC")
-        self.cellArr = [["Oda Seçimi", "Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi"],
-                        ["roomSelection","roomType","itemName","itemCount"],
-                        ["extended","","",""]]
-        self.saveButton.alpha = 0
-        self.selectedItem = nil
-        self.categorieTypes = [String]()
-        self.filteredItems = [Item]()
-        self.selectedType = ""
-        self.selectedName = ""
-        self.selectedCount = ""
-        self.selectedRoom = ""
-        self.alertView = nil
-        self.itemData = nil
-        self.items = [Item]()
-        self.pickerView = UIPickerView()
-        self.rooms = [String]()
-        self.getRooms()
+        
+        self.clearAllAttr()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.reloadData()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
-        self.saveButton.isHidden = true
-        
     }
     func getItemType()  {
         DataServices.ds.REF_CATEGORIES.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -79,29 +61,56 @@ class SetItemVC: BaseVC {
         self.pickerView.reloadComponent(0)
     }
     
-    
+    func clearAllAttr(){
+        self.cellArr = [["Oda Seçimi", "Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi"],
+                        ["roomSelection","roomType","itemName","itemCount"],
+                        ["extended","","",""]]
+        self.saveButton.alpha = 0
+        self.selectedItem = nil
+        self.categorieTypes = [String]()
+        self.filteredItems = [Item]()
+        self.selectedType = ""
+        self.selectedName = ""
+        self.selectedCount = ""
+        var selectedItemCountForContainer = ""
+        self.selectedRoom = ""
+        self.alertView = nil
+        self.items = [Item]()
+        self.pickerView = UIPickerView()
+        self.rooms = [String]()
+//        self.getItems()
+        self.getRooms()
+        self.tableView.reloadData()
+    }
     func createAlertView(index: Int){
         
         self.alertView = UIAlertController(title: "Tür Ekle", message: "Satın alacağınız demirbaş için tür ekleyiniz.", preferredStyle: .alert)
-        alertView.addTextField { (textfield) in
-            textfield.inputView = self.pickerView
-            if (index == 0){
-                textfield.text = self.rooms[self.pickerView.selectedRow(inComponent: 0)]
-                self.getItemType()
-            }else if (index == 1){
-                self.getItems()
-                if !self.categorieTypes.isEmpty{
-                    self.pickerView.selectRow(0, inComponent: 0, animated: false)
-                    textfield.text = self.categorieTypes[self.pickerView.selectedRow(inComponent: 0)]
+        if self.getRoomsCompleted {
+            alertView.addTextField { (textfield) in
+                textfield.inputView = self.pickerView
+                if (index == 0){
+                    textfield.text = self.rooms[self.pickerView.selectedRow(inComponent: 0)]
+                    self.getItemType()
+                }else if (index == 1){
+                    self.getItems()
+                    if !self.categorieTypes.isEmpty{
+                        self.pickerView.selectRow(0, inComponent: 0, animated: false)
+                        textfield.text = self.categorieTypes[self.pickerView.selectedRow(inComponent: 0)]
+                    }
+                }else if(index == 2){
+                    if !self.items.isEmpty{
+                        self.pickerView.selectRow(0, inComponent: 0, animated: true)
+                        textfield.text = self.items[self.pickerView.selectedRow(inComponent: 0)].name
+                    }
+                }else if index == 3 {
+                    if !self.items.isEmpty{
+                        self.pickerView.selectRow(0, inComponent: 0, animated: true)
+                        textfield.text = String(self.pickerView.selectedRow(inComponent: 0) + 1)
+                    }
                 }
-            }else if(index == 2){
-                if !self.items.isEmpty{
-                    self.pickerView.selectRow(0, inComponent: 0, animated: true)
-                      textfield.text = self.items[self.pickerView.selectedRow(inComponent: 0)].name
-                }
+                
             }
-            
-        }
+        
         alertView.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
         
         let okButtonAction = UIAlertAction(title: "Seç", style: .default) { (alertAction) in
@@ -115,14 +124,23 @@ class SetItemVC: BaseVC {
                             self.selectedItem = item
                         }
                     }
+            DataServices.ds.REF_CONTAINER.child(self.selectedRoom).child(self.selectedItem.Id).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let itemDict = snapshot.value as? Dictionary<String,AnyObject>{
+                    self.selectedItemCountForContainer = itemDict["ItemCount"] as! String
+                }else{
+                    self.selectedItemCountForContainer = "0"
+                }
+            })
             case 3: self.selectedCount = self.alertView.textFields![0].text!
+                    self.saveButton.alpha = 1
             default:
-                self.saveButton.isHidden = false
+             break
             }
             
             if self.cellArr[0].count > index && index != -1 {
                 if index != 3{
                     self.cellArr[2][index + 1] = "extended"
+//                    self.cellArr[2][index] = ""
                 }
                 
                 self.tableView.reloadData()
@@ -130,6 +148,7 @@ class SetItemVC: BaseVC {
             
         }
         alertView.addAction(okButtonAction)
+    }
     }
     func getItems()  {
         DataServices.ds.REF_ITEMS.observeSingleEvent(of: .value, with: { (snapshots) in
@@ -157,13 +176,27 @@ class SetItemVC: BaseVC {
                 for item in categories.keys{
                     self.rooms.append(item)
                 }
+                self.getRoomsCompleted = true
             }
         })
     }
     
     @IBAction func savePressed(_ sender: Any) {
-        DataServices.ds.addRoomsInContainer(roomId: self.selectedRoom, itemData: self.itemData.exportDictionary())
+        if self.selectedCount == selectedItem.count {
+            DataServices.ds.REF_ITEMS.child(self.selectedItem.Id).updateChildValues(["ItemCount": 0,"IsAvailable": false])
+        }else{
+            let setCount: Int = Int(self.selectedCount)!
+            let getCount = Int(self.selectedItem.count)!
+            let avarage = getCount - setCount
+            
+            DataServices.ds.REF_ITEMS.child(self.selectedItem.Id).updateChildValues(["ItemCount": "\(avarage)"])
+        }
+        let updatedCount : String = String(Int(self.selectedCount)! + Int(self.selectedItemCountForContainer)!)
+        let dummyItem = Item(ItemId: self.selectedItem.Id, ItemCount: updatedCount, ItemName: self.selectedItem.name, ItemPrice: self.selectedItem.price, ItemType: self.selectedItem.type, isavailable: 1)
+        DataServices.ds.addRoomsInContainer(roomId: self.selectedRoom, itemData: dummyItem.exportDictionary())
+        self.clearAllAttr()
     }
+    
 }
 
 extension SetItemVC: UITableViewDelegate, UITableViewDataSource{
@@ -179,56 +212,66 @@ extension SetItemVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         // burayı seçerken geri gidip seçerse diye yaptım ama hatalı olmuyor çıldırıcam " Ç I L D I R D I "
-//        if self.selectedRoom != "" && indexPath.row == 0{
-//            self.saveButton.alpha = 0
-//            self.selectedItem = nil
-//            self.categorieTypes = [String]()
-//            self.filteredItems = [Item]()
-//            self.selectedType = ""
-//            self.selectedName = ""
-//            self.selectedCount = ""
-//            self.selectedRoom = ""
-//            self.items = [Item]()
-//
-//            self.pickerView.reloadComponent(0)
-//            self.tableView.reloadData()
-//        }else if self.selectedType != "" && indexPath.row == 1{
-//            self.saveButton.alpha = 0
-//            self.selectedItem = nil
-//            self.categorieTypes = [String]()
-//            self.filteredItems = [Item]()
-//            self.selectedType = ""
-//            self.selectedName = ""
-//            self.selectedCount = ""
-//            self.items = [Item]()
-//
-//            self.pickerView.reloadComponent(0)
-//            self.tableView.reloadData()
-//        }else if self.selectedName != "" && indexPath.row == 2{
-//            self.saveButton.alpha = 0
-//            self.selectedItem = nil
-//            self.selectedName = ""
-//            self.selectedCount = ""
-//
-//            self.pickerView.reloadComponent(0)
-//            self.tableView.reloadData()
-//        }else if self.selectedCount != "" && indexPath.row == 3{
-//            self.saveButton.alpha = 0
-//            self.selectedCount = ""
-//
-//            self.pickerView.reloadComponent(0)
-//            self.tableView.reloadData()
-//        }
-        if cellArr[2][indexPath.row] != "" {
-            self.createAlertView(index: indexPath.row)
-            
-            self.alertView.title = self.cellArr[0][indexPath.row]
-            self.alertView.message = "Seçim Gerçekleştirin"
-            
-            self.present(self.alertView, animated: true, completion: nil)
-            self.selectedRow = indexPath.row
+        if self.getRoomsCompleted {
+            if self.selectedRoom != "" && indexPath.row == 0{
+                self.saveButton.alpha = 0
+                self.selectedItem = nil
+                self.categorieTypes = [String]()
+                self.filteredItems = [Item]()
+                self.selectedType = ""
+                self.selectedName = ""
+                self.selectedCount = ""
+                self.selectedRoom = ""
+                self.cellArr = [["Oda Seçimi", "Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi"],
+                                ["roomSelection","roomType","itemName","itemCount"],
+                                ["extended","","",""]]
+                self.items = [Item]()
+                self.pickerView.reloadComponent(0)
+                self.tableView.reloadData()
+                self.alertView.textFields![0].text = ""
+            }
+            else if self.selectedType != "" && indexPath.row == 1{
+                self.saveButton.alpha = 0
+                self.selectedItem = nil
+                self.filteredItems = [Item]()
+                self.selectedName = ""
+                self.selectedCount = ""
+                self.selectedType = ""
+                self.cellArr = [["Oda Seçimi", "Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi"],
+                                ["roomSelection","roomType","itemName","itemCount"],
+                                ["extended","extended","",""]]
+                self.items = [Item]()
+                self.pickerView.reloadComponent(0)
+                self.tableView.reloadData()
+                self.alertView.textFields![0].text = ""
+            }else if self.selectedName != "" && indexPath.row == 2{
+                self.saveButton.alpha = 0
+                self.selectedItem = nil
+                self.selectedCount = ""
+                self.selectedName = ""
+                self.cellArr = [["Oda Seçimi", "Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi"],
+                                ["roomSelection","roomType","itemName","itemCount"],
+                                ["extended","extended","extended",""]]
+                self.pickerView.reloadComponent(0)
+                self.tableView.reloadData()
+                self.alertView.textFields![0].text = ""
+            }else if self.selectedCount != "" && indexPath.row == 3{
+                self.saveButton.alpha = 0
+                self.selectedCount = ""
+                self.pickerView.reloadComponent(0)
+                self.tableView.reloadData()
+                self.alertView.textFields![0].text = ""
+            }
+            if cellArr[2][indexPath.row] != "" {
+                self.createAlertView(index: indexPath.row)
+                
+                self.alertView.title = self.cellArr[0][indexPath.row]
+                self.alertView.message = "Seçim Gerçekleştirin"
+                
+                self.present(self.alertView, animated: true, completion: nil)
+                self.selectedRow = indexPath.row
+            }
         }
     }
     
@@ -274,19 +317,20 @@ extension SetItemVC: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       
-        if self.selectedRoom == "" {
-            self.alertView.textFields![0].text = self.rooms[row]
-            
-        }else if (self.selectedType == "") {
-            self.alertView.textFields![0].text = self.categorieTypes[row]
-            
-        }else if (self.selectedName == ""){
-            self.alertView.textFields![0].text = self.filteredItems[row].name
-        }else{
-            self.alertView.textFields![0].text = "\(row + 1)"
+        if self.getRoomsCompleted {
+            if self.selectedRoom == "" {
+                self.alertView.textFields![0].text = self.rooms[row]
+                
+            }else if (self.selectedType == "") {
+                self.alertView.textFields![0].text = self.categorieTypes[row]
+                
+            }else if (self.selectedName == ""){
+                self.alertView.textFields![0].text = self.filteredItems[row].name
+                self.selectedItem = self.filteredItems[row]
+            }else{
+                self.alertView.textFields![0].text = "\(row + 1)"
+            }
         }
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

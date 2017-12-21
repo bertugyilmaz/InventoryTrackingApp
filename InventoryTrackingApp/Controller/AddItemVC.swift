@@ -62,7 +62,7 @@ class AddItemVC: BaseVC {
         alertView.addTextField { (textfield) in
             if index == 0{
                 textfield.inputView = self.pickerView
-            }else if index == 2 && index == 3 {
+            }else if index == 2 || index == 3 {
                 textfield.keyboardType = .numberPad
             }
             
@@ -171,6 +171,7 @@ extension AddItemVC: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        self.alertView.textFields?[0].text = categorieTypes[row]
         return categorieTypes[row]
     }
     

@@ -25,7 +25,7 @@ class RoomTableViewCell: UITableViewCell {
 //            }
             idLabel.text = room.Id
             typeLabel.text = room.roomType
-            countLabel.text = "1"
+            countLabel.text = room.roomName
         }
     }
 }

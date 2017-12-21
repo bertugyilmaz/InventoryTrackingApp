@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InventoryTrackingApp/Controller/SetItemVC.swift"
-            timestampString = "535413655.663201"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.841225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "getItemsForRoom()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InventoryTrackingApp/Controller/SetItemVC.swift"
-            timestampString = "535413655.663742"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.841293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "getItemsForRoom()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InventoryTrackingApp/Controller/SetItemVC.swift"
-            timestampString = "535413655.664037"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.841344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "getItemsForRoom()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InventoryTrackingApp/Controller/SetItemVC.swift"
-            timestampString = "535413655.664243"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.84139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "getItemsForRoom()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InventoryTrackingApp/Controller/SetItemVC.swift"
-            timestampString = "535413655.664444"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.841434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "getItemsForRoom()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InventoryTrackingApp/Controller/SetItemVC.swift"
-            timestampString = "535413655.664643"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.841479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "getItemsForRoom()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,14 +105,266 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InventoryTrackingApp/Controller/SetItemVC.swift"
-            timestampString = "535413655.66484"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.841523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "getItemsForRoom()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.841567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getPersonDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InventoryTrackingApp/Controller/MainVC.swift"
+            timestampString = "535550755.841611"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "addRoom(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InventoryTrackingApp/Controller/MainVC.swift"
+            timestampString = "535550755.841654"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InventoryTrackingApp/Controller/MainVC.swift"
+            timestampString = "535550755.841693"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryTrackingApp.MainVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/MainVC.swift"
+                  timestampString = "535550247.628754"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in InventoryTrackingApp.MainVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/MainVC.swift"
+                  timestampString = "535550247.630524"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.841732"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "RoomDetailVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryTrackingApp.RoomDetailVC.room.getter : Swift.ImplicitlyUnwrappedOptional&lt;InventoryTrackingApp.Room&gt;"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/RoomDetailVC.swift"
+                  timestampString = "535550247.634271"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryTrackingApp.RoomDetailVC.room.setter : Swift.ImplicitlyUnwrappedOptional&lt;InventoryTrackingApp.Room&gt;"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/RoomDetailVC.swift"
+                  timestampString = "535550247.635936"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryTrackingApp.RoomDetailVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; InventoryTrackingApp.RoomDetailVC"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/RoomDetailVC.swift"
+                  timestampString = "535550247.637598"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryTrackingApp.RoomDetailVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;InventoryTrackingApp.RoomDetailVC&gt;"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/RoomDetailVC.swift"
+                  timestampString = "535550247.639281"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "240">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InventoryTrackingApp/Controller/RoomDetailVC.swift"
+            timestampString = "535550755.841771"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "RoomDetailVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryTrackingApp.RoomDetailVC.AuthenticatedUser.getter : Swift.ImplicitlyUnwrappedOptional&lt;InventoryTrackingApp.User&gt;"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/RoomDetailVC.swift"
+                  timestampString = "535550247.644831"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryTrackingApp.RoomDetailVC.AuthenticatedUser.setter : Swift.ImplicitlyUnwrappedOptional&lt;InventoryTrackingApp.User&gt;"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/RoomDetailVC.swift"
+                  timestampString = "535550247.646544"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryTrackingApp.RoomDetailVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; InventoryTrackingApp.RoomDetailVC"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/RoomDetailVC.swift"
+                  timestampString = "535550247.648368"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "364">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryTrackingApp.RoomDetailVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;InventoryTrackingApp.RoomDetailVC&gt;"
+                  moduleName = "InventoryTrackingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onurhuseyincantay/Desktop/InventoryTrackingApp/InventoryTrackingApp/Controller/RoomDetailVC.swift"
+                  timestampString = "535550247.650169"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "320">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

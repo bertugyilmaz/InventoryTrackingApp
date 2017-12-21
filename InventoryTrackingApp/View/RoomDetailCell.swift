@@ -10,7 +10,6 @@ import UIKit
 
 class RoomDetailCell: UITableViewCell {
     
-    @IBOutlet weak var ResponsiblePerson : UILabel!
     @IBOutlet weak var ItemCode : UILabel!
     @IBOutlet weak var ItemName : UILabel!
     @IBOutlet weak var ItemCount : UILabel!

@@ -8,12 +8,11 @@
 
 import Foundation
 
-enum RoomType: String {
-  case  Laboratory,Class
-}
+
 enum ItemType : String{
     case TEKNOLOJI = "Teknoloji"
     case TEKNOLOJIK_MOBILYA = "Teknolojik Mobilya"
     case MOBILYA = "Mobilya"
+    case SINIFESYASI = "Sınıf Eşyası"
 }
 
