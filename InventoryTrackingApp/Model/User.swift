@@ -18,6 +18,9 @@ class User  {
     var Name : String!{
         return user_Name
     }
+    var IsAdmin: Bool!{
+        return isAdmin
+    }
     init(userId:String!,userName:String,isAdmin:Bool = false) {
         self.user_Id = userId
         self.user_Name = userName

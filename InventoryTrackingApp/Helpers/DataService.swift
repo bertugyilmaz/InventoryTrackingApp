@@ -46,6 +46,10 @@ public class DataServices {
     var FIR_AUTH: Auth {
         return _FIR_AUTH
     }
+    
+    func setEmployer(roomId: String, uId: String){
+        _REF_ROOMS.child(roomId).updateChildValues(["AuthenticatedPerson": uId])
+    }
     func createRoom(roomData : Dictionary<String,AnyObject>)  {
         _REF_ROOMS.childByAutoId().updateChildValues(roomData)
     }
