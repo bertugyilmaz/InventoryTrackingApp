@@ -55,14 +55,18 @@ class RoomDetailVC: BaseVC {
                     print(snap)
                     print("Onur : \(snapshots)")
                     if let itemDict = snap.value as? Dictionary<String,AnyObject>{
-                        let availability = itemDict["IsAvailable"] as! Int
-                            item = Item(ItemId: snap.key, ItemCount: itemDict["ItemCount"] as! String, ItemName: itemDict["ItemName"] as! String,               ItemPrice:itemDict["ItemPrice"] as! String, ItemType: itemDict["ItemType"] as! String, isavailable: availability)
+ 
+                        if let availableNumber = NSNumber(value: itemDict["IsAvailable"] as! Bool) as? NSNumber{
+                            
+                            item = Item(ItemId: snap.key, ItemCount: itemDict["ItemCount"] as! String, ItemName: itemDict["ItemName"] as! String,               ItemPrice:itemDict["ItemPrice"] as! String, ItemType: itemDict["ItemType"] as! String, isavailable: Int(availableNumber))
                             self.items.append(item)
+                        }else {
+                            print("Something went wrong --> getItemsForRoom")
+                        }
                     }
                 }
                 self.tableView.reloadData()
             }
-            
         })
     }
     
