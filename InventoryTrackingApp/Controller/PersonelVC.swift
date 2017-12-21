@@ -35,6 +35,7 @@ class PersonelVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("PersonelVC")
+        self.rooms.removeAll()
         self.getRooms()
     }
     
@@ -116,7 +117,6 @@ extension PersonelVC: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user: User = self.users[indexPath.row]
-        
         self.present(alertView, animated: true, completion: nil)
         self.selectedUser = user.Id
     }

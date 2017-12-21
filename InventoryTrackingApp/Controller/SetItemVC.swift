@@ -17,7 +17,7 @@ class SetItemVC: BaseVC {
     var cellArr: [[String]]!
     var items = [Item]()
     var pickerView = UIPickerView()
-    var rooms = [String]()
+    var rooms = [Room]()
     var selectedRow = -2
     var selectedItem : Item!
     var categorieTypes = [String]()
@@ -27,7 +27,7 @@ class SetItemVC: BaseVC {
     var selectedCount = ""
     var selectedRoom = ""
     var selectedItemCountForContainer = ""
-    var getRoomsCompleted : Bool = false
+    var getRoomsCompleted: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +91,7 @@ class SetItemVC: BaseVC {
             alertView.addTextField { (textfield) in
                 textfield.inputView = self.pickerView
                 if (index == 0){
-                    textfield.text = self.rooms[self.pickerView.selectedRow(inComponent: 0)]
+                    textfield.text = self.rooms[self.pickerView.selectedRow(inComponent: 0)].roomName
                 }else if (index == 1){
                     if !self.categorieTypes.isEmpty{
                         self.pickerView.selectRow(0, inComponent: 0, animated: false)
@@ -178,13 +178,15 @@ class SetItemVC: BaseVC {
         })
     }
     func getRooms()  {
-        DataServices.ds.REF_ROOMS.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let categories = snapshot.value as? Dictionary<String,AnyObject>{
-                for item in categories.keys{
-                    self.rooms.append(item)
+        DataServices.ds.REF_ROOMS.observeSingleEvent(of: .value, with: { (snapshots) in
+            if let snapshot = snapshots.children.allObjects as? [DataSnapshot]{
+                for snap in snapshot{
+                    if let roomDict = snap.value as? Dictionary<String,AnyObject>{
+                        self.rooms.append(Room(roomId: snap.key, roomType: roomDict["RoomType"] as! String, itemKeys: [], itemCount: "", name: roomDict["RoomName"] as! String))
+                    }
                 }
-                self.getRoomsCompleted = true
             }
+            self.getRoomsCompleted = true
         })
     }
     
@@ -312,8 +314,8 @@ extension SetItemVC: UIPickerViewDelegate, UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if self.selectedRoom == "" {
-            self.alertView.textFields![0].text = self.rooms[row]
-            return self.rooms[row]
+            self.alertView.textFields![0].text = self.rooms[row].Id
+            return self.rooms[row].roomName
         }else if (self.selectedType == "") {
             self.alertView.textFields![0].text = self.categorieTypes[row]
             return self.categorieTypes[row]
@@ -329,11 +331,9 @@ extension SetItemVC: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if self.getRoomsCompleted {
             if self.selectedRoom == "" {
-                self.alertView.textFields![0].text = self.rooms[row]
-                
+                self.alertView.textFields![0].text = self.rooms[row].Id
             }else if (self.selectedType == "") {
                 self.alertView.textFields![0].text = self.categorieTypes[row]
-                
             }else if (self.selectedName == ""){
                 self.alertView.textFields![0].text = self.filteredItems[row].name
                 self.selectedItem = self.filteredItems[row]

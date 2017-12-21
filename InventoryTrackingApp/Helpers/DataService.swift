@@ -62,9 +62,8 @@ public class DataServices {
     func addItem(itemData : Dictionary<String,AnyObject>){
         REF_ITEMS.childByAutoId().updateChildValues(itemData)
     }
-    func addRoom(roomData: Dictionary<String,AnyObject>){
-        let unique = REF_ROOMS.childByAutoId()
-        unique.updateChildValues(roomData)
+    func addRoom(id: String, roomData: Dictionary<String,AnyObject>){
+        _REF_ROOMS.child(id).updateChildValues(roomData)
     }
     func addRoomsInContainer(roomId: String, itemData: Dictionary<String,AnyObject>){
         _REF_CONTAINER.child(roomId).child(itemData["ItemId"] as! String).updateChildValues(itemData)
