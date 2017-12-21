@@ -13,15 +13,11 @@ class RoomDetailVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var responsiblePersonLabel : UILabel!
-    var room : Room!
-    var AuthenticatedUser : User!
-    var AuthenticatedUserKey : String = ""{
+    var room: Room!
+    var AuthenticatedUser: User!
+    var AuthenticatedUserKey: String = ""{
         didSet{
-            if room.AuthenticatedPerson != nil{
-               self.getPersonDetails()
-                return
-            }
-
+            self.getPersonDetails()
         }
     }
     var items = [Item]()
@@ -29,11 +25,11 @@ class RoomDetailVC: BaseVC {
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.responsiblePersonLabel.text = room.AuthenticatedPerson.Name
         super.viewWillAppear(animated)
         self.getItemsForRoom()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.responsiblePersonLabel.text = self.room.AuthenticatedPerson.Name
     }
     var item : Item!
     func getPersonDetails()  {
@@ -41,8 +37,11 @@ class RoomDetailVC: BaseVC {
             DataServices.ds.REF_USERS.child(self.AuthenticatedUserKey).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let user = snapshot.value as? Dictionary<String,AnyObject>{
                     let name  = user["UserName"] as! String
-                    let Id = self.AuthenticatedUserKey
-                         self.room.AuthenticatedPerson = User(userId: Id, userName: name, isAdmin: false)
+                    let id = self.AuthenticatedUserKey
+                    let isAdmin = user["IsAdmin"] as! Bool
+                    let nameArr = name.components(separatedBy: "@")
+                    self.room.AuthenticatedPerson = User(userId: id, userName: nameArr[0], isAdmin: isAdmin)
+                    self.responsiblePersonLabel.text = self.room.AuthenticatedPerson.Name
                 }
             })
         }
