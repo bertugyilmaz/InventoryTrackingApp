@@ -192,7 +192,7 @@ class SetItemVC: BaseVC {
     
     @IBAction func savePressed(_ sender: Any) {
         if self.selectedCount == selectedItem.count {
-            DataServices.ds.REF_ITEMS.child(self.selectedItem.Id).updateChildValues(["ItemCount": 0,"IsAvailable": false])
+            DataServices.ds.REF_ITEMS.child(self.selectedItem.Id).updateChildValues(["ItemCount": "0","IsAvailable": false])
         }else{
             let setCount: Int = Int(self.selectedCount)!
             let getCount = Int(self.selectedItem.count)!
