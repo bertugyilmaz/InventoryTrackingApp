@@ -22,6 +22,7 @@ public class DataServices {
     private var _REF_ROOMS = DB_BASE.child("Rooms")
     private var _REF_CATEGORIES = DB_BASE.child("Categories")
     private var _REF_CONTAINER = DB_BASE.child("Container")
+    var dataSnapshot = [DataSnapshot].self
   
     var REF_CONTAINER: DatabaseReference {
         return _REF_CONTAINER

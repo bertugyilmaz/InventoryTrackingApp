@@ -100,6 +100,17 @@ class RoomDetailVC: BaseVC {
     }
     
     func DeleteItemFromRoom(index : IndexPath)  {
+        
+        var count : Int!
+        for item in self.stockItems{ // burayı completiondan çıkar daha once gerçekleştir
+            if item.Id == self.items[index.row].Id{
+                let first = Int(item.count)!
+                count = first + 1
+                break
+            }
+            
+        }
+
         if(self.room.itemCount == "0"){
             DataServices.ds.REF_CONTAINER.child(self.room.Id).child(self.items[index.row].Id).removeValue(completionBlock: { (error, ref) in
                 if error != nil{
@@ -123,16 +134,13 @@ class RoomDetailVC: BaseVC {
                 }
             })
         }else{
+            //https://firebase.google.com/docs/database/ios/read-and-write#update_specific_fields buraya bakıcan uykun geldi o yuzden bıraktın tek atıcak bu soruna
             DataServices.ds.REF_CONTAINER.child(self.room.Id).child(self.items[index.row].Id).updateChildValues(["ItemCount":self.room.itemCount], withCompletionBlock: { (error, ref) in
                 if error != nil{
                     print("birşeyler oldu")
                     return
                 }
-                for item in self.stockItems{
-                    if item.Id == self.items[index.row].Id{
-                        let first = Int(item.count)!
-                        let count = first + 1
-                        DataServices.ds.REF_ITEMS.child(self.items[index.row].Id).updateChildValues(["ItemCount":String(count)], withCompletionBlock: { (error, ref) in
+                DataServices.ds.REF_ITEMS.child(self.items[index.row].Id).updateChildValues(["ItemCount":String(count)], withCompletionBlock: { (error, ref) in
                             if error != nil{
                                 print("birşeyler oldu")
                                 return
@@ -141,9 +149,8 @@ class RoomDetailVC: BaseVC {
                             self.tableView.reloadData()
                             
                         })
-                        break
-                    }
-                }
+                    
+                
             
         })
         

@@ -12,8 +12,8 @@ target 'InventoryTrackingApp' do
   # Pods for InventoryTrackingApp
 
   target 'InventoryTrackingAppTests' do
-    inherit! :search_paths
-    # Pods for testing
+    inherit! : complete
+   
   end
 
 end

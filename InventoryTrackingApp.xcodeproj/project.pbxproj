@@ -12,7 +12,6 @@
 		0133609C1FDB183F008A19BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133609A1FDB183F008A19BD /* Main.storyboard */; };
 		0133609E1FDB183F008A19BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0133609D1FDB183F008A19BD /* Assets.xcassets */; };
 		013360A11FDB183F008A19BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133609F1FDB183F008A19BD /* LaunchScreen.storyboard */; };
-		013360AC1FDB183F008A19BD /* InventoryTrackingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */; };
 		01659D721FE1CA59003C2352 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01659D711FE1CA59003C2352 /* Helper.swift */; };
 		019BD8661FDD737B0068E223 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 019BD8651FDD737B0068E223 /* GoogleService-Info.plist */; };
 		019BD8681FDD7BA80068E223 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BD8671FDD7BA80068E223 /* DataService.swift */; };
@@ -25,6 +24,7 @@
 		611324FC1FDB1F3400B61FC1 /* loginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611324FB1FDB1F3400B61FC1 /* loginTextFields.swift */; };
 		611324FF1FDB1FA000B61FC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611324FE1FDB1FA000B61FC1 /* Constants.swift */; };
 		611325011FDB1FD700B61FC1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611325001FDB1FD700B61FC1 /* Extensions.swift */; };
+		61195A4F1FEDDB2B00B3CA6A /* AddItemVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61195A4E1FEDDB2B00B3CA6A /* AddItemVCTest.swift */; };
 		61349AF01FDDBC130082B939 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61349AED1FDDBC130082B939 /* Item.swift */; };
 		61349AF11FDDBC130082B939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61349AEE1FDDBC130082B939 /* User.swift */; };
 		61349AF21FDDBC130082B939 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61349AEF1FDDBC130082B939 /* Room.swift */; };
@@ -34,6 +34,7 @@
 		61A59A9B1FDB3CEA0002E55B /* PersonelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A9A1FDB3CEA0002E55B /* PersonelVC.swift */; };
 		61A59A9D1FDB3D100002E55B /* AddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A9C1FDB3D100002E55B /* AddItemVC.swift */; };
 		61A59A9F1FDB3D220002E55B /* SetItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A59A9E1FDB3D220002E55B /* SetItemVC.swift */; };
+		61A8B38F1FEDAB6600A93965 /* LoginActionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8B38E1FEDAB6600A93965 /* LoginActionTest.swift */; };
 		61ACE62B1FDFE0B70038024C /* RoomDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ACE62A1FDFE0B70038024C /* RoomDetailCell.swift */; };
 		61C688541FDD38D200F0E63D /* itemSetAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C688531FDD38D200F0E63D /* itemSetAddButton.swift */; };
 		AA431F9463458647C6B515B8 /* Pods_InventoryTrackingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1BF0F527290EF193F04796C /* Pods_InventoryTrackingAppTests.framework */; };
@@ -58,7 +59,6 @@
 		013360A01FDB183F008A19BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		013360A21FDB183F008A19BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013360A71FDB183F008A19BD /* InventoryTrackingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventoryTrackingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTrackingAppTests.swift; sourceTree = "<group>"; };
 		013360AD1FDB183F008A19BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01659D711FE1CA59003C2352 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		019BD8651FDD737B0068E223 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -74,6 +74,7 @@
 		611324FB1FDB1F3400B61FC1 /* loginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTextFields.swift; sourceTree = "<group>"; };
 		611324FE1FDB1FA000B61FC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		611325001FDB1FD700B61FC1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		61195A4E1FEDDB2B00B3CA6A /* AddItemVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemVCTest.swift; sourceTree = "<group>"; };
 		61349AED1FDDBC130082B939 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		61349AEE1FDDBC130082B939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		61349AEF1FDDBC130082B939 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		61A59A9A1FDB3CEA0002E55B /* PersonelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonelVC.swift; sourceTree = "<group>"; };
 		61A59A9C1FDB3D100002E55B /* AddItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemVC.swift; sourceTree = "<group>"; };
 		61A59A9E1FDB3D220002E55B /* SetItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetItemVC.swift; sourceTree = "<group>"; };
+		61A8B38E1FEDAB6600A93965 /* LoginActionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginActionTest.swift; sourceTree = "<group>"; };
 		61ACE62A1FDFE0B70038024C /* RoomDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailCell.swift; sourceTree = "<group>"; };
 		61C688531FDD38D200F0E63D /* itemSetAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemSetAddButton.swift; sourceTree = "<group>"; };
 		8C604FC23B9D0A82ADE22E6B /* Pods_InventoryTrackingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryTrackingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,8 +159,9 @@
 		013360AA1FDB183F008A19BD /* InventoryTrackingAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				013360AB1FDB183F008A19BD /* InventoryTrackingAppTests.swift */,
 				013360AD1FDB183F008A19BD /* Info.plist */,
+				61A8B38E1FEDAB6600A93965 /* LoginActionTest.swift */,
+				61195A4E1FEDDB2B00B3CA6A /* AddItemVCTest.swift */,
 			);
 			path = InventoryTrackingAppTests;
 			sourceTree = "<group>";
@@ -493,7 +496,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				013360AC1FDB183F008A19BD /* InventoryTrackingAppTests.swift in Sources */,
+				61A8B38F1FEDAB6600A93965 /* LoginActionTest.swift in Sources */,
+				61195A4F1FEDDB2B00B3CA6A /* AddItemVCTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +658,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+				);
 				INFOPLIST_FILE = InventoryTrackingAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bertugyilmaz.InventoryTrackingAppTests;
@@ -669,6 +684,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+				);
 				INFOPLIST_FILE = InventoryTrackingAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bertugyilmaz.InventoryTrackingAppTests;

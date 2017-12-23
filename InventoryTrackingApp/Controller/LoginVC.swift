@@ -18,7 +18,7 @@ class LoginVC : BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loggedinBefore()
+       // self.loggedinBefore()
         
         loginButton.addTarget(self, action: #selector(loginButtonAction(sender:)), for: .touchUpInside)
 
@@ -44,7 +44,6 @@ class LoginVC : BaseVC {
             }
         }
     }
-    
     func checkUserOnFirebase(userName: String, password: String, completion: @escaping (Bool)->()){
         
         DataServices.ds.FIR_AUTH.signIn(withEmail: userName, password: password, completion: { (user, error) in
