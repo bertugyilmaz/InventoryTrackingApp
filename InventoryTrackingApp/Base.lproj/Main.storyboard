@@ -652,7 +652,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mMi-fb-nYa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="32" width="375" height="635"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -702,8 +702,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mMi-fb-nYa" firstAttribute="leading" secondItem="z7V-g4-OlO" secondAttribute="leading" id="IFv-MQ-CJu"/>
-                            <constraint firstItem="mMi-fb-nYa" firstAttribute="top" secondItem="wHe-ZV-aN8" secondAttribute="bottom" id="Kxc-XB-YkO"/>
                             <constraint firstAttribute="trailing" secondItem="mMi-fb-nYa" secondAttribute="trailing" id="kdA-tM-gA0"/>
+                            <constraint firstItem="mMi-fb-nYa" firstAttribute="top" secondItem="z7V-g4-OlO" secondAttribute="top" constant="32" id="tJK-6Y-D91"/>
                             <constraint firstAttribute="bottom" secondItem="mMi-fb-nYa" secondAttribute="bottom" id="z3z-cO-cZu"/>
                         </constraints>
                     </view>
@@ -715,12 +715,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OQ-7o-SuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ZI8-Of-RoJ" userLabel="Tür"/>
-                <tapGestureRecognizer id="U04-T5-squ" userLabel="Oda"/>
-                <tapGestureRecognizer id="asH-w8-TLG" userLabel="Adet"/>
-                <tapGestureRecognizer id="mH2-JM-omV" userLabel="Ad"/>
             </objects>
-            <point key="canvasLocation" x="2942" y="974"/>
+            <point key="canvasLocation" x="2941.5999999999999" y="973.76311844077964"/>
         </scene>
     </scenes>
     <resources>

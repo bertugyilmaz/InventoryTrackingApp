@@ -18,7 +18,7 @@ class LoginVC : BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // self.loggedinBefore()
+        self.loggedinBefore()
         
         loginButton.addTarget(self, action: #selector(loginButtonAction(sender:)), for: .touchUpInside)
 
