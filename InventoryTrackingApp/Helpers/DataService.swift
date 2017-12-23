@@ -53,6 +53,10 @@ public class DataServices {
     func createRoom(roomData : Dictionary<String,AnyObject>)  {
         _REF_ROOMS.childByAutoId().updateChildValues(roomData)
     }
+    func deleteRoom(roomId: String){
+        _REF_ROOMS.child(roomId).removeValue()
+        _REF_CONTAINER.child(roomId).removeValue()
+    }
     func createFirebaseUser(uid: String, userData: Dictionary<String,AnyObject>){
         _REF_USERS.child(uid).updateChildValues(userData)
     }
