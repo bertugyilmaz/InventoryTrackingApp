@@ -90,31 +90,34 @@ class SetItemVC: BaseVC {
         if self.getRoomsCompleted {
             alertView.addTextField { (textfield) in
                 textfield.inputView = self.pickerView
-                if (index == 0){
-                    textfield.text = self.rooms[self.pickerView.selectedRow(inComponent: 0)].roomName
-                }else if (index == 1){
-                    if !self.categorieTypes.isEmpty{
-                        self.pickerView.selectRow(0, inComponent: 0, animated: false)
-                        textfield.text = self.categorieTypes[self.pickerView.selectedRow(inComponent: 0)]
-                    }else{
-                        self.present(Helper.showAlertView(title: "Bu tipte eşya yoktur!", message: ""), animated: true, completion: nil)
+                if !self.rooms.isEmpty{
+                    if (index == 0){
+                        textfield.text = self.rooms[self.pickerView.selectedRow(inComponent: 0)].roomName
+                    }else if (index == 1){
+                        if !self.categorieTypes.isEmpty{
+                            self.pickerView.selectRow(0, inComponent: 0, animated: false)
+                            textfield.text = self.categorieTypes[self.pickerView.selectedRow(inComponent: 0)]
+                        }else{
+                            self.present(Helper.showAlertView(title: "Bu tipte eşya yoktur!", message: ""), animated: true, completion: nil)
+                        }
+                    }else if(index == 2){
+                        if !self.filteredItems.isEmpty{
+                            self.pickerView.selectRow(0, inComponent: 0, animated: true)
+                            textfield.text = self.filteredItems[self.pickerView.selectedRow(inComponent: 0)].name
+                        }else{
+                            self.present(Helper.showAlertView(title: "Bu tipte eşya yoktur!", message: ""), animated: true, completion: nil)
+                        }
+                    }else if index == 3 {
+                        if !self.items.isEmpty{
+                            self.pickerView.selectRow(0, inComponent: 0, animated: true)
+                            textfield.text = String(self.pickerView.selectedRow(inComponent: 0) + 1)
+                        }else{
+                            self.present(Helper.showAlertView(title: "Bu tipte eşya yoktur!", message: ""), animated: true, completion: nil)
+                        }
                     }
-                }else if(index == 2){
-                    if !self.filteredItems.isEmpty{
-                        self.pickerView.selectRow(0, inComponent: 0, animated: true)
-                        textfield.text = self.filteredItems[self.pickerView.selectedRow(inComponent: 0)].name
-                    }else{
-                        self.present(Helper.showAlertView(title: "Bu tipte eşya yoktur!", message: ""), animated: true, completion: nil)
-                    }
-                }else if index == 3 {
-                    if !self.items.isEmpty{
-                        self.pickerView.selectRow(0, inComponent: 0, animated: true)
-                        textfield.text = String(self.pickerView.selectedRow(inComponent: 0) + 1)
-                    }else{
-                        self.present(Helper.showAlertView(title: "Bu tipte eşya yoktur!", message: ""), animated: true, completion: nil)
-                    }
+                }else {
+                    self.present(Helper.showAlertView(title: "Önce oda eklemelisiiz!", message: ""), animated: true, completion: nil)
                 }
-                
             }
         
         alertView.addAction(UIAlertAction(title: "İptal", style: .cancel, handler: nil))
@@ -174,7 +177,6 @@ class SetItemVC: BaseVC {
                     }
                 }
             }
-            
         })
     }
     func getRooms()  {
@@ -204,6 +206,10 @@ class SetItemVC: BaseVC {
         let dummyItem = Item(ItemId: self.selectedItem.Id, ItemCount: updatedCount, ItemName: self.selectedItem.name, ItemPrice: self.selectedItem.price, ItemType: self.selectedItem.type, isavailable: 1)
         DataServices.ds.addRoomsInContainer(roomId: self.selectedRoom, itemData: dummyItem.exportDictionary())
         self.clearAllAttr()
+        
+        self.items.removeAll()
+        self.getItems()
+        
         self.present(self.attentionAlert, animated: true, completion: nil)
     }
     
@@ -308,8 +314,6 @@ extension SetItemVC: UIPickerViewDelegate, UIPickerViewDataSource{
         }else{
             return Int(self.selectedItem.count)!
         }
-        
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
