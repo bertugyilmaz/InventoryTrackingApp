@@ -19,4 +19,11 @@ class Helper {
         alertView.addAction(okButton)
         return alertView
     }
+    
+    static func sumString (str1: String, str2: String) -> String{
+        let str1Int = Int(str1)!
+        let str2Int = Int(str2)!
+        let total = str1Int + str2Int
+        return String(total)
+    }
 }

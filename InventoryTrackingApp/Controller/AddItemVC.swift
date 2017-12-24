@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddItemVC: BaseVC {
  
@@ -16,6 +17,7 @@ class AddItemVC: BaseVC {
     var attentionAlert = Helper.showAlertView(title: "", message: "İşleminiz Başarılı")
     var cellArr: [[String]]!
     var itemData: Item!
+    var items = [Item]()
     var pickerView = UIPickerView()
     var categorieTypes = [String]()
     var selectedRow = -2
@@ -35,6 +37,7 @@ class AddItemVC: BaseVC {
         self.cellArr = [["Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi", "Demirbaş Fiyatı"],
                         ["roomType","itemName","itemCount","search"],
                         ["extended","","",""]]
+        self.getItems()
         self.saveButton.alpha = 0
         
         self.tableView.dataSource = self
@@ -48,15 +51,42 @@ class AddItemVC: BaseVC {
     }
     
     func setRightBarButtonItem(){
-        let rightButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(turEkle))
+        let rightButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addType))
         self.navItem.setRightBarButton(rightButton, animated: false)
     }
     
-    func turEkle()  {
+    func addType()  {
         self.createAlertView(index: -1)
         self.present(alertView, animated: true, completion: nil)
     }
-   
+    
+    func getItems(){
+        DataServices.ds.REF_ITEMS.observeSingleEvent(of: .value, with: { (snapshots) in
+            if let snapshot = snapshots.children.allObjects as? [DataSnapshot]{
+                
+                for snap in snapshot{
+                    if let itemDict = snap.value as? Dictionary<String,AnyObject>{
+                        
+                        let item = Item(ItemId: snap.key, ItemCount: itemDict["ItemCount"] as! String, ItemName: itemDict["ItemName"] as! String, ItemPrice:itemDict["ItemPrice"] as! String, ItemType: itemDict["ItemType"] as! String, isavailable: 1)
+                        self.items.append(item)
+                    }
+                }
+            }
+        })
+    }
+    
+    func updateCountofExistingItem(sentItem: Item) -> Bool{
+        for item in items {
+            if item.name.lowercased() == sentItem.name.lowercased() {
+                DataServices.ds.REF_ITEMS.child(item.Id).updateChildValues(["ItemCount": Helper.sumString(str1: item.count, str2: sentItem.count), "IsAvailable": true, "ItemPrice": Helper.sumString(str1: item.price, str2: sentItem.price)])
+                return true
+            }else{
+//                print("Not me")
+            }
+        }
+        return false
+    }
+    
     func createAlertView(index: Int){
         
         self.alertView = UIAlertController(title: "Tür Ekle", message: "Satın alacağınız demirbaş için tür ekleyiniz.", preferredStyle: .alert)
@@ -72,7 +102,10 @@ class AddItemVC: BaseVC {
         
         let okButtonAction = UIAlertAction(title: "Seç", style: .default) { (alertAction) in
             let textField = self.alertView.textFields?[0]
-           
+            if textField?.text == "" {
+                self.present(Helper.showAlertView(title: "Boş değer bırakamazsınız.", message: ""), animated: true, completion: nil)
+                return
+            }
             if self.cellArr[0].count > index && index != -1 {
                 if index != 3{
                     self.cellArr[2][index + 1] = "extended"
@@ -121,10 +154,27 @@ class AddItemVC: BaseVC {
         })
     }
     
+    func clearAllAttr(){
+        self.cellArr.removeAll()
+        self.cellArr = [["Demirbaş Türü", "Demirbaş Adı", "Demirbaş Adedi", "Demirbaş Fiyatı"],
+                        ["roomType","itemName","itemCount","search"],
+                        ["extended","","",""]]
+        self.selectedRow = -2
+        self.selectedType = ""
+        self.selectedName = ""
+        self.selectedCount = ""
+        self.selectedPrice = ""
+        self.saveButton.alpha = 0
+        self.tableView.reloadData()
+    }
+    
     @IBAction func savePressed(_ sender: Any) {
         self.itemData = Item(ItemId: "", ItemCount: selectedCount, ItemName: selectedName, ItemPrice: selectedPrice, ItemType: selectedType, isavailable: 1)
-        DataServices.ds.addItem(itemData: self.itemData.exportDictionary())
+        if !self.updateCountofExistingItem(sentItem: itemData) {
+            DataServices.ds.addItem(itemData: self.itemData.exportDictionary())
+        }
         self.present(self.attentionAlert, animated: true, completion: nil)
+        self.clearAllAttr()
     }
 }
 
