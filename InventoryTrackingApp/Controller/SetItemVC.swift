@@ -177,7 +177,6 @@ class SetItemVC: BaseVC {
                     }
                 }
             }
-            
         })
     }
     func getRooms()  {
@@ -207,6 +206,10 @@ class SetItemVC: BaseVC {
         let dummyItem = Item(ItemId: self.selectedItem.Id, ItemCount: updatedCount, ItemName: self.selectedItem.name, ItemPrice: self.selectedItem.price, ItemType: self.selectedItem.type, isavailable: 1)
         DataServices.ds.addRoomsInContainer(roomId: self.selectedRoom, itemData: dummyItem.exportDictionary())
         self.clearAllAttr()
+        
+        self.items.removeAll()
+        self.getItems()
+        
         self.present(self.attentionAlert, animated: true, completion: nil)
     }
     
@@ -311,8 +314,6 @@ extension SetItemVC: UIPickerViewDelegate, UIPickerViewDataSource{
         }else{
             return Int(self.selectedItem.count)!
         }
-        
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
