@@ -22,13 +22,12 @@ class MainVC: BaseVC {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
+     
 //        Database e örnek data eklendi
 //        let standartUser = UserDefaults.standard.value(forKey: "userId")
 //        let room = Room(roomId: "123123123", roomType: "Yemekhane", itemKeys: [], itemCount: "")
 //        room.AuthenticatedPerson = User(userId: standartUser as! String  , userName: "Bertuğ")
 //        DataServices.ds.addRoom(roomData: room.exportDictionary())
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +40,14 @@ class MainVC: BaseVC {
     }
 
     func addRoom(sender: UIBarButtonItem) {
-        self.createAlertForAddRoom()
-        self.present(self.alertView, animated: true, completion: nil)
+        print(self.currentUser.Id)
+        print(self.currentUser.IsAdmin)
+        if self.currentUser.IsAdmin {
+            self.createAlertForAddRoom()
+            self.present(self.alertView, animated: true, completion: nil)
+        }else {
+            self.present(Helper.showAlertView(title: "Admin girişi yapınız.", message: ""), animated: true, completion: nil)
+        }
     }
     
     func createAlertForAddRoom()  {
@@ -191,10 +196,14 @@ extension MainVC: UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let Delete = UITableViewRowAction(style: .default, title: "Odayı Sil") { (action, indexPath) in
-            let room = self.Rooms[indexPath.row]
-            self.getItemsInContainer(room.Id)
-            self.deleteRoom(indexPath)
-            self.selectedRoomID = room.Id
+            if self.currentUser.IsAdmin {
+                let room = self.Rooms[indexPath.row]
+                self.getItemsInContainer(room.Id)
+                self.deleteRoom(indexPath)
+                self.selectedRoomID = room.Id
+            }else {
+                self.present(Helper.showAlertView(title: "Admin girişi yapınız.", message: ""), animated: true, completion: nil)                
+            }
         }
         return [Delete]
     }

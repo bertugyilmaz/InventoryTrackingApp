@@ -55,9 +55,13 @@ class AddItemVC: BaseVC {
         self.navItem.setRightBarButton(rightButton, animated: false)
     }
     
-    func addType()  {
-        self.createAlertView(index: -1)
-        self.present(alertView, animated: true, completion: nil)
+    func addType() {
+        if self.currentUser.IsAdmin {
+            self.createAlertView(index: -1)
+            self.present(alertView, animated: true, completion: nil)
+        }else {
+            self.present(Helper.showAlertView(title: "Admin girişi yapınız.", message: ""), animated: true, completion: nil)
+        }       
     }
     
     func getItems(){
@@ -192,15 +196,19 @@ extension AddItemVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if cellArr[2][indexPath.row] != "" {
-            self.createAlertView(index: indexPath.row)
-            
-            self.alertView.title = self.cellArr[0][indexPath.row]
-            self.alertView.message = "Seçim Gerçekleştirin"
-            
-            self.present(self.alertView, animated: true, completion: nil)
-            self.selectedRow = indexPath.row
-        }
+        if self.currentUser.IsAdmin  {
+            if cellArr[2][indexPath.row] != "" {
+                self.createAlertView(index: indexPath.row)
+                
+                self.alertView.title = self.cellArr[0][indexPath.row]
+                self.alertView.message = "Seçim Gerçekleştirin"
+                
+                self.present(self.alertView, animated: true, completion: nil)
+                self.selectedRow = indexPath.row
+            }
+        }else {
+            self.present(Helper.showAlertView(title: "Admin girişi yapınız.", message: ""), animated: true, completion: nil)
+        }        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -73,4 +73,20 @@ public class DataServices {
     func addRoomsInContainer(roomId: String, itemData: Dictionary<String,AnyObject>){
         _REF_CONTAINER.child(roomId).child(itemData["ItemId"] as! String).updateChildValues(itemData)
     }
+    func getUser(id: String, completion: @escaping (_ result: Bool, _ user: User) -> ()){
+        var user: User!
+         _REF_USERS.child(id).observeSingleEvent(of: .value, with: { (snapshots) in
+            
+            if let dict = snapshots.value as? Dictionary<String,AnyObject> {
+                let id = snapshots.key
+                let username = dict["UserName"] as! String
+                let IsAdmin = dict["IsAdmin"] as! Bool
+                let name = username.components(separatedBy: "@")[0]
+                user = User(userId: id, userName: name, isAdmin: IsAdmin)
+                completion(true,user)
+            }
+         }) { (error) in
+            completion(false, user)
+        }
+    }
 }

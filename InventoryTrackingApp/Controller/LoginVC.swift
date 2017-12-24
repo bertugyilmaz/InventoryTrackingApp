@@ -44,8 +44,8 @@ class LoginVC : BaseVC {
             }
         }
     }
+    
     func checkUserOnFirebase(userName: String, password: String, completion: @escaping (Bool)->()){
-        
         DataServices.ds.FIR_AUTH.signIn(withEmail: userName, password: password, completion: { (user, error) in
             
             if error != nil {
@@ -53,24 +53,28 @@ class LoginVC : BaseVC {
             }
             
             if let usr = user {
-                
-                self.userInfo = User(userId: usr.uid, userName: usr.email!, isAdmin: true)
-                
-                self.setUserInfoOnUserDefaults()
-             
-//                Veritabanına kayıt edildi.
-//                DataServices.ds.createFirebaseUser(uid: usr.uid, userData: self.userInfo.exportDictionary())
-                
                 let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTabbarVC")
-                self.navigationController?.pushViewController(mainVC!, animated: true)
-                
-                completion(true)
+
+                DataServices.ds.getUser(id: usr.uid, completion: { (result, user) in
+                    if result {
+                        self.userInfo = User(userId: usr.uid, userName: usr.email!, isAdmin: user.IsAdmin)
+                        self.setUserInfoOnUserDefaults()
+                        
+                        self.navigationController?.pushViewController(mainVC!, animated: true)
+                        completion(true)
+                    }else {
+//                      Veritabanına kayıt edildi.
+//                        self.userInfo = User(userId: usr.uid, userName: usr.email!, isAdmin: true)
+//                        DataServices.ds.createFirebaseUser(uid: usr.uid, userData: self.userInfo.exportDictionary())
+                        
+                        print("not saved database --> checkUserOnFirebase")
+                    }
+                })
             }
         })
     }
     
     func setUserInfoOnUserDefaults(){
-        print(self.userInfo.Id)
         UserDefaults.standard.set(self.userInfo.Id, forKey: "userId")
         UserDefaults.standard.set(self.userInfo.Name, forKey: "userEmail")
     }

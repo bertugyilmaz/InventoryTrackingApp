@@ -9,7 +9,8 @@
 import UIKit
 
 class BaseVC: UIViewController{
-
+    
+    var currentUser: User!
     var navItem: UINavigationItem!
     var activityController: UIActivityViewController!
     
@@ -17,7 +18,7 @@ class BaseVC: UIViewController{
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         self.navItem = self.navigationController?.visibleViewController?.navigationItem
-        
+        self.getUser()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,6 +34,19 @@ class BaseVC: UIViewController{
         return .lightContent
     }
     
+    func getUser(){
+        if UserDefaults.standard.string(forKey: "userId") != nil {
+            //Kullanıcı bilgilerini id ye göre databaseden çeker
+            DataServices.ds.getUser(id: UserDefaults.standard.string(forKey: "userId")!) { (result, user) in
+                if result{
+                    self.currentUser = user
+                }else {
+                    print("something went wrong --> getUser ViewDidload")
+                }
+            }
+        }
+    }
+    
     func setLeftBarButton(){
         
         if self.restorationIdentifier == "RoomDetailVC"{
@@ -44,7 +58,8 @@ class BaseVC: UIViewController{
     }
 
     func logoutButtonAction(sender: UIButton){
-        UserDefaults.standard.removeObject(forKey: "userDict")
+        UserDefaults.standard.removeObject(forKey: "userId")
+        UserDefaults.standard.removeObject(forKey: "userEmail")
         self.navigationController?.popViewController(animated: true)    
     }
     
@@ -53,7 +68,7 @@ class BaseVC: UIViewController{
     }
     
     func printButtonAction(sender: UIButton){
-        print("Selam ben print edicem seni")
+//        print("Selam ben print edicem seni")
         self.activityController = UIActivityViewController(activityItems: [], applicationActivities: nil)
         self.activityController.popoverPresentationController?.sourceView = self.view
         self.activityController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
