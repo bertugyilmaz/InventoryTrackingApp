@@ -127,10 +127,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" translucent="NO" id="F9x-b4-6kg">
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Personel ara.." translucent="NO" id="QCS-7r-TBF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="397-dC-eVi" id="uck-yM-dhO"/>
+                                    </connections>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="116" id="IoZ-a4-yNn" customClass="PersonelTableViewCell" customModule="InventoryTrackingApp" customModuleProvider="target">
@@ -248,7 +251,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Personeller" image="employer-icon" id="Qel-Ik-q1o"/>
                     <connections>
-                        <outlet property="searchBar" destination="F9x-b4-6kg" id="tU2-kW-LQU"/>
+                        <outlet property="searchBar" destination="QCS-7r-TBF" id="PnX-RU-xmp"/>
                         <outlet property="tableView" destination="hHR-ug-SuV" id="mW6-bg-QJt"/>
                     </connections>
                 </viewController>

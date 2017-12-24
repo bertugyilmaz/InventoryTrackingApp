@@ -13,11 +13,14 @@ class PersonelVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
     var alertView: UIAlertController!
     var pickerView = UIPickerView()
     var users = [User]()
     var rooms = [Room]()
     var selectedUser = ""
+    var showSearchResults = false
+    var filteredEmployee = [User]()
     var alert = Helper.showAlertView(title: "", message: "İşleminiz Başarılı")    
     
     override func viewDidLoad() {
@@ -98,15 +101,20 @@ class PersonelVC: BaseVC {
         
         alertView.addAction(okButtonAction)
     }
+    
 }
 extension PersonelVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.users.count
+        if showSearchResults {
+            return self.filteredEmployee.count
+        }else {
+            return self.users.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PersonelTableViewCell
-        let user: User = self.users[indexPath.row]
+        var user = self.showSearchResults ? self.filteredEmployee[indexPath.row] : self.users[indexPath.row]
         
         cell.idLabel.text = user.Id
         cell.nameLabel.text = user.Name
@@ -116,7 +124,7 @@ extension PersonelVC: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user: User = self.users[indexPath.row]
+        var user = self.showSearchResults ? self.filteredEmployee[indexPath.row] : self.users[indexPath.row]
         self.present(alertView, animated: true, completion: nil)
         self.selectedUser = user.Id
     }
@@ -138,4 +146,21 @@ extension PersonelVC: UIPickerViewDelegate,UIPickerViewDataSource{
     }
 }
 
+extension PersonelVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            
+            showSearchResults = false
+            
+            view.endEditing(true)
+            self.tableView.reloadData()
+        } else {
+            showSearchResults = true
+            let lower = searchBar.text!
+            
+            filteredEmployee = users.filter({$0.Name.lowercased().range(of: lower.lowercased()) != nil})
+            self.tableView.reloadData()
+        }
+    }
+}
 
