@@ -37,7 +37,7 @@ class MainVC: BaseVC {
         self.getRooms()
         self.getItems()
         let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addRoom(sender:)))
-        self.navItem.setRightBarButton(rightButton, animated: true)
+        self.navItem.setRightBarButton(rightButton, animated: false)
     }
 
     func addRoom(sender: UIBarButtonItem) {
@@ -157,7 +157,7 @@ class MainVC: BaseVC {
                     let count = first + second
                     let strCount = String(count)
                     
-                    DataServices.ds.REF_ITEMS.child(i.Id).updateChildValues(["ItemCount": strCount])
+                    DataServices.ds.REF_ITEMS.child(i.Id).updateChildValues(["ItemCount": strCount, "IsAvailable": i.count == "0" ? true : false])
                 }
             }
         }

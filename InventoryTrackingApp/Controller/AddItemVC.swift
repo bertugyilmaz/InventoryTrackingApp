@@ -48,8 +48,8 @@ class AddItemVC: BaseVC {
     }
     
     func setRightBarButtonItem(){
-        let rightButton : UIBarButtonItem = UIBarButtonItem(title: "Tür Ekle", style: .plain, target: self, action: #selector(turEkle))
-        self.navItem.setRightBarButton(rightButton, animated: true)
+        let rightButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(turEkle))
+        self.navItem.setRightBarButton(rightButton, animated: false)
     }
     
     func turEkle()  {
