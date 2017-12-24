@@ -40,7 +40,7 @@ class PersonelVC: BaseVC {
     }
     
     func getRooms(){
-        DataServices.ds.REF_ROOMS.observe(.value, with: { (snapshots) in
+        DataServices.ds.REF_ROOMS.observeSingleEvent(of: .value, with: { (snapshots) in
             if let snapshot = snapshots.children.allObjects as? [DataSnapshot]{
                 for snap in snapshot{
                     
@@ -49,13 +49,13 @@ class PersonelVC: BaseVC {
                         let type = dict["RoomType"] as! String
 //                        let auth = dict["AuthenticatedPerson"] as! String
                         let name = dict["RoomName"] as! String
-
+                        
                         let room = Room(roomId: id, roomType: type, itemKeys: [], itemCount: "", name: name)
                         self.rooms.append(room)
                     }
                 }
             }
-        }, withCancel: nil)
+        })
     }
     
     func getPersonels()  {

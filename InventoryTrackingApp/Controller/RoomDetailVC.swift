@@ -121,7 +121,7 @@ class RoomDetailVC: BaseVC {
                 self.stockItems.remove(at: i)
                 self.stockItems.insert(Item(ItemId: item.Id, ItemCount: strCount, ItemName: item.Id, ItemPrice: item.price, ItemType: item.type, isavailable: item.isAvailable ? 1 : 0), at: i)
                 
-                DataServices.ds.REF_ITEMS.child(self.items[index.row].Id).updateChildValues(["ItemCount": strCount])
+                DataServices.ds.REF_ITEMS.child(self.items[index.row].Id).updateChildValues(["ItemCount": strCount, "IsAvaiblable": currentItem.count == "0" ? true : false])
                 self.tableView.reloadData()
                 break
             }
