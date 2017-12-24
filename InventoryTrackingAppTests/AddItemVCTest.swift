@@ -9,7 +9,6 @@ import XCTest
 @testable import Firebase
 @testable import InventoryTrackingApp
 class AddItemVCTest: XCTestCase {
-   
     override func setUp() {
         super.setUp()
          // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,10 +17,9 @@ class AddItemVCTest: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        rooms = nil
-        item = nil
+        
     }
-    func getRoomIdTest()  {
+    func testGetRoomIdTest()  {
         DataServices.ds.REF_ROOMS.observeSingleEvent(of: .value, with: { (snapshots) in
             if let snapshot = snapshots.children.allObjects as? [DataSnapshot]{
                 for snap in snapshot{
@@ -33,7 +31,7 @@ class AddItemVCTest: XCTestCase {
             XCTFail()
         }
     }
-    func getItems()  {
+    func testGetItems()  {
         DataServices.ds.REF_ITEMS.observeSingleEvent(of: .value, with: { (snapshots) in
             if let snapshot = snapshots.children.allObjects as? [DataSnapshot]{
                 for snap in snapshot{
@@ -45,11 +43,6 @@ class AddItemVCTest: XCTestCase {
             XCTFail()
         }
     }
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    
     
 }
