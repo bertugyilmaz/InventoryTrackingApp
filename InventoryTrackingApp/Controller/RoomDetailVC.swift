@@ -25,14 +25,15 @@ class RoomDetailVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.getItemsInContainer()
         self.getItemDetail()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.responsiblePersonLabel.text = self.room.AuthenticatedPerson.Name
     }
     
@@ -106,7 +107,7 @@ class RoomDetailVC: BaseVC {
             DataServices.ds.REF_CONTAINER.child(self.room.Id).child(currentItem.Id).removeValue()
         }else {
             let strCount = currentItem.count
-            print(strCount)
+//            print(strCount)
             DataServices.ds.REF_CONTAINER.child(self.room.Id).child(currentItem.Id).updateChildValues(["ItemCount": strCount])
         }
         
@@ -135,7 +136,23 @@ class RoomDetailVC: BaseVC {
         }
 
     }
+    
+    override func printButtonAction(sender: UIButton) {
+        super.printButtonAction(sender: sender)
+        if self.items.count != 0{
+            let pdfUrl = Helper.createPdfFromTableView(self.tableView)
+            
+            self.activityController = UIActivityViewController(activityItems: [pdfUrl], applicationActivities: nil)
+            self.activityController.popoverPresentationController?.sourceView = self.view
+            self.activityController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+            
+            self.present(self.activityController, animated: true, completion: nil)
+        }else {
+            self.present(Helper.showAlertView(title: "", message: "Demirbaşınız bulunmamakta"), animated: true, completion: nil)
+        }
+    }
 }
+
 extension RoomDetailVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
@@ -168,8 +185,6 @@ extension RoomDetailVC: UITableViewDelegate,UITableViewDataSource{
         }
         return [Delete]
     }
-
-    
 }
 
 

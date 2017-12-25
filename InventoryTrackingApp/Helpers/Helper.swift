@@ -26,4 +26,47 @@ class Helper {
         let total = str1Int + str2Int
         return String(total)
     }
+    
+    static func screenShotofTableView(_ tableView: UITableView) -> UIImage{
+        UIGraphicsBeginImageContext(tableView.contentSize);
+        
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        tableView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let row = tableView.numberOfRows(inSection: 0)
+        let numberofRowthatShowinscreen = 4
+        var scrollCount = row / numberofRowthatShowinscreen
+        
+        for i in 0 ..< scrollCount {
+            tableView.scrollToRow(at: IndexPath(row: (i+1)*numberofRowthatShowinscreen , section: 0), at: .top, animated: false)
+            tableView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        }
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext();
+        return image;
+    }
+    
+    static func createPdfFromTableView(_ tableView: UITableView) -> URL{
+        let priorBounds: CGRect = tableView.bounds
+        let fittedSize: CGSize = tableView.sizeThatFits(CGSize(width: priorBounds.size.width, height: tableView.contentSize.height))
+        
+        let pdfPageBounds: CGRect = CGRect(x: 0, y: 0, width: fittedSize.width, height: (fittedSize.height))
+        let pdfData: NSMutableData = NSMutableData()
+        
+        UIGraphicsBeginPDFContextToData(pdfData, pdfPageBounds, nil)
+        UIGraphicsBeginPDFPageWithInfo(pdfPageBounds, nil)
+        tableView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        UIGraphicsEndPDFContext()
+        
+        let documentDirectories = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+        let documentsFileName = documentDirectories! + "/" + "items.pdf"
+        
+        pdfData.write(toFile: documentsFileName, atomically: true)
+        let url = URL(fileURLWithPath: documentsFileName)
+
+//        print(documentsFileName)
+        return url
+    }
+    
+    
 }
